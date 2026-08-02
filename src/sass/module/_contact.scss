@@ -8,40 +8,36 @@
 
 .contact__inner{
     padding: 4.5rem 0 6.25rem; 
-    @include mq("lg") {
-        padding: 8.75rem clamp(2.25rem, 4%, 5rem);
+    @include mq("md") {
+    padding: 5rem 0 6.25rem; 
     }
 }
 .contact__container{
     @include mq("md") {
     padding: 0 clamp(1rem, 2%, 2rem);
     }
-    @include mq("lg") {
-    padding: 0 clamp(6rem, 6%, 7rem);
-    }
+
 }
 .contact__wrapper{
     display: flex;
     flex-direction: column;
+
     @include mq("md") {
-    }
-    @include mq("lg") {
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         max-width: $inner;
-        padding: 4rem 0 5rem;
+        box-shadow: 4px 4px 10px rgba($black, 0.25);
+
+        padding: 4rem 0 3.75rem;
         min-width: 0;
     }
-    @include mq("xl") {
-        margin: 0 auto;
-    }
+
 }
 .contact__titles{
-    @include mq("lg") {
+    @include mq("md") {
         width: 50%; 
         padding-right: 3.25rem;
         padding-left: 3.125rem;
-        // border-right: 1px solid $green;
     }
 }
 .contact__head{
@@ -50,9 +46,9 @@
     border-bottom: 1px solid $green;
     padding: 0.5rem;
     box-shadow: 0 8px 6px -8px rgba($font-bk, 0.2);
-    @include mq("lg") {
+    @include mq("md") {
     box-shadow: none;
-    padding: 1rem 0.25rem 0.35rem 0.25rem;
+    padding: 1rem 0.25rem 0.5rem 0.5rem;
     }
 }
 
@@ -79,16 +75,13 @@
     top: 3.5rem;
     height: auto;
     aspect-ratio: (109 /50);
+
     @include mq("md") {
-        top:initial;
-        bottom: 3.5rem;
-        
-    }
-    @include mq("lg") {
     aspect-ratio: (301 /138);
     width: max(18.8125rem, 22%);
     right: 2.75rem;
     top: 6.25rem;
+    bottom: 3.5rem;
     z-index: 1;
     }
 }
@@ -96,7 +89,7 @@
     display: flex;
     flex-direction: column;
     padding: 0.875rem 0;
-    @include mq("lg") {
+    @include mq("md") {
         flex-direction: row;
         padding: 1.5rem 0;
     }
@@ -110,7 +103,7 @@
     text-shadow: 1px 1px 1px rgba($font-bk, 0.28);
     width: 100%;
     padding: 0 0.45rem 0 0;
-    @include mq("lg") {
+    @include mq("md") {
         letter-spacing: normal;
         width: auto;
         text-align: left;
@@ -120,14 +113,14 @@
 }
 .contact__description.contact__time{
     padding: 0 0.25rem 0 0;
-    @include mq("lg") {
+    @include mq("md") {
         line-height: 1.25;
         padding: 0;
     }
 }
 .contact__description.contact__tel{
      padding: 0 0.25rem 0 0;
-    @include mq("lg") {
+    @include mq("md") {
         line-height: 1.25;
         padding: 0;
     }
@@ -140,7 +133,7 @@
     text-align: center;
     line-height: 1.5;
     text-shadow: 1px 1px 1px rgba($font-bk, 0.28);
-    @include mq("lg") {
+    @include mq("md") {
         font-size: 1rem;
         letter-spacing: normal;
         display: inline-block;
@@ -149,7 +142,7 @@
     }
 }
 .contact__content{
-    @include mq("lg") {
+    @include mq("md") {
         margin-top: 0rem;
         max-width: 150px;
         width: 55%;
@@ -163,7 +156,7 @@
     max-width: 295px;
     margin: 0.875rem auto 0;
     aspect-ratio: 295/ 163;
-    @include mq("lg") {
+    @include mq("md") {
     margin: 0 0 0 1.125rem;
     box-shadow: none;
     aspect-ratio: 273 / 148;
@@ -172,15 +165,12 @@
 .contact__btns{
     width: 100%;
     @include mq("md") {
-        margin-top: 2.5rem;
-        padding-left: 1rem;
-    }
-    @include mq("lg") {
-        aspect-ratio: (508 / 255);
+        aspect-ratio: (477 / 295);
         margin-top: 0;
-        padding-left: 0;
+        // padding-left: 0;
         width: 45%;
-        margin-left: 1.875rem;
+        margin-left: 2.125rem;
+        padding: 1.5rem 0 0;
     }
 }
 .contact__title-btn.common-btn{
@@ -193,19 +183,16 @@
     font-weight: $regular;
     text-shadow:  2px 4px 6px rgba($font-bk, 0.2);
     @include mq("md") {
-        font-size: 4rem;
-    }
-    @include mq("lg") {
         font-size: 5rem;
         text-shadow: none;
         margin-top: -0.75rem;
-        margin-left: -0.45rem;
+        margin-left: -0.65rem;
         }
 }
 .contact__btns--wrapper{
-    @include mq("lg") {
+    @include mq("md") {
     border-left:1px solid $green;
-    adding: 0 1rem 0 0;
+    aspect-ratio: 477 / 255;
     }
 }
 .contact__title-btn::first-letter{
@@ -221,7 +208,7 @@
     text-align: center;
     top: 0;
     text-shadow: 2px 2px 6px rgba($font-bk, 0.2);
-    @include mq("lg") {
+    @include mq("md") {
         font-weight: $regular;
         width: 100%;
         text-shadow: none;
@@ -239,7 +226,7 @@
     top: 0;
     margin-top: 0rem;
     text-shadow:  2px 2px 6px rgba($font-bk, 0.4);
-    @include mq("lg") {
+    @include mq("md") {
         margin-top: 0.45rem;
         // padding-left: 0.25rem;
         margin-right: 0.5rem;
@@ -249,19 +236,19 @@
 .contact__btn-wrap.common__btn-wrap{
       &::before {
     box-shadow: 4px 8px 4px -5px rgba($font-bk, 0.4);
-    @include mq("lg") {
+    @include mq("md") {
     box-shadow: none;
     }
     }
 }
 .contact__btn-wrap.common__btn-wrap::before{
-    @include mq("lg") {
+    @include mq("md") {
         left: -2px;
     }
 }
 .common__btn.contact__btn{
-    @include mq("lg") {
-        margin: 2.25rem 0.5rem 0 -0.5rem;
+    @include mq("md") {
+        margin: 2.5rem 0.5rem 0 -0.5rem;
         padding: 0.875rem 2.45rem;
     }
 }

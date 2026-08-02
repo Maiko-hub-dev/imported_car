@@ -12,6 +12,23 @@
       padding-right: $padding-pc;
       padding-left: $padding-pc;
     }
+    .inner--footer{
+      padding-inline: 0.875rem;
+      max-width: 375px;
+    }
+    .inner--about,
+    .inner--information,
+    .inner--top-blog,
+    .inner--campaign,
+    .inner--contact,
+    .inner--voice,
+    .inner--price,
+    .inner--blog{
+      max-width: 600px;
+    }
+    .inner--blog{
+      padding-inline: 1.3125rem;
+    }
   }
 } @else {
   .inner {

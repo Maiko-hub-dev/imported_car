@@ -7,22 +7,17 @@
 .campaign__inner{
     padding: 2.5rem 0.9375rem 0;
     margin-top: 2.5rem;
-    @include mq("lg") {
-        padding: 2.35em 4em;
+    @include mq("md") {
+        padding: 2.35em 0;
         margin-top: 2rem;
-    }
-    @include mq("xl") {
-        padding: 2.35em 5em;
+        max-width: 1080px;
+        margin-inline: auto;
     }
 }
 .campaign__container{
-    @include mq("lg") {
+    @include mq("md") {
         margin-top: 1rem;
-        padding: 0 clamp(0.65rem, 0.75vw, 1.25rem);
-    }
-}.campaign__wrapper{
-    @include mq("xl") {
-        padding: 0 5em;
+        padding: 0;
     }
 }
 .campaign__head {
@@ -33,85 +28,51 @@
 }
 .campaign__title.common-title{
     font-weight: $regular;
-    @include mq("lg") {
+    @include mq("md") {
         padding-left: 0;
         transform: translateX(-50.75%);
     }
 }
 .campaign__navigation {
   display: none;
-  @include mq("lg") {
+  @include mq("md") {
     display: flex;
     gap: 1rem;
     align-items: center;
     min-width: 240px;
     margin-top: 2.106875rem;
-    margin-right: clamp(0.85rem, 0.5vw, 1rem);
   }
 }
 
 .campaign-button-prev,
 .campaign-button-next {
     display: none;
-    @include mq("lg") {
+    @include mq("md") {
+    display: block;   
     position: relative;
     width: 5rem;
     height: 5rem;
-    border: 1px solid $green;
-    border-radius: 50%;
     cursor: pointer;
-    display: flex;   
     }
 }
 .campaign-button-next{
-    @include mq("lg") {
+    @include mq("md") {
         margin-left: 4rem;
+        background-image: url('../../images/common/campaign-next.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+.campaign-button-prev{
+    @include mq("md") {
+        background-image: url('../../images/common/campaign-prev.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 }
 
-.campaign-button-next::before {
-  content: "";
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  width: 2rem;
-  height: 1px;
-  background: $green;
-  transform: translate(-60%, -50%);
-}
-
-.campaign-button-next::after {
-  content: "";
-  position: absolute;
-  top: 47.5%;
-  right: 38%;
-  width: 0.5rem;
-  height: 1rem;
-  border-top: 1px solid $green;
-  border-right: 1px solid $green;
-  transform: translate(50%, -50%)  skew(60deg) rotate(90deg);
-}
-.campaign-button-prev::before {
-  content: "";
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  width: 2rem;
-  height: 1px;
-  background: $green;
-  transform: translate(-40%, -50%);
-}
-.campaign-button-prev::after {
-  content: "";
-  position: absolute;
-  top: 47.5%;
-  left: 41%;
-  width: 0.5rem;
-  height: 1rem;
-  border-top: 1px solid $green;
-  border-left: 1px solid $green;
-  transform: translate(-50%, -50%) skew(300deg) rotate(270deg);
-}
 .campaign__contents{
     position: relative;
     // margin-top: 0.75rem;
@@ -121,9 +82,16 @@
         margin-top: 1.5rem;
     }
 }
+
+.campaign__slider {
+    @include mq("md") {
+        padding-left: calc((50vw - 1080px) / 2);
+    }
+}
 .contents__inner.swiper2 {
     padding: 2rem 0 1.5rem ;
-    @include mq("lg") {
+    @include mq("md") {
+        width: calc(50vw + 540px);
         padding: 0;
     }
 }
@@ -131,13 +99,13 @@
 .slide__block{
     width: 100%;
     padding: 1rem;
-    @include mq("lg") {
+    @include mq("md") {
         padding: 1.5rem 1rem;
     }
 }
 .slide__container{
     padding-top: 0.75rem;
-    @include mq("lg") {
+    @include mq("md") {
     padding-top: 0.65rem;
     }
 }
@@ -155,7 +123,7 @@
     @include mq("md") {
         padding: 0.25rem 0.75rem;
     }
-    @include mq("lg") {
+    @include mq("md") {
         width: 7.25rem;
         padding: 0.35rem 0.75rem 0.25rem;
     }
@@ -172,10 +140,7 @@
     min-width: 120px;
     text-align: center;
     white-space: nowrap;
-    @include mq("md") {
-    padding: 0.25rem 0.75rem;
-    }
-     @include mq("lg") {
+     @include mq("md") {
     width: 7.5rem;
     padding: 0.25rem 0.75rem 0.25rem;
     }
@@ -187,7 +152,7 @@
     font-weight: $medium;
     line-height: 1.5;
     margin-top: 4px;
-    @include mq("lg") {
+    @include mq("md") {
     }
 }
 .slide__line{
@@ -201,7 +166,7 @@
     line-height: 1.1714;
     text-align: center;
     font-family: $base-font-family;
-    @include mq("lg") {
+    @include mq("md") {
         font-size: 1rem;
         width: 100%;
         text-align: left;
@@ -213,7 +178,7 @@
     justify-content: space-around;
     align-items: flex-end;
     padding: 0.225rem 0.5rem 0;
-    @include mq("lg") {
+    @include mq("md") {
     padding: 0 0.5rem;
     }
 }
@@ -226,8 +191,7 @@
     letter-spacing: 0.04em;
     padding-bottom: 0.25rem;
     font-weight: $bold;
-    @include mq("lg") {
-        padding-left: 1.25rem;
+    @include mq("md") {
         font-size: 1.5rem;
     }
 }
@@ -243,9 +207,8 @@
     font-size: 2rem;
     font-weight: $bold;
     font-family: $lato-font;
-    @include mq("lg") {
+    @include mq("md") {
     font-size: 2.5rem;
-    padding-left: 1.25rem;
     }
 }
 .swiper-slide.slide-content{
@@ -257,12 +220,12 @@
 .campaign__btn.common__btn {
     margin-top: 0rem;
     padding: 0.875rem 2.25rem;
-    @include mq("lg") {
+    @include mq("md") {
         margin-top: 4.5rem;
     }
 }
 .campaign__viewmore.common__btn-wrap{
-    @include mq("lg") {
+    @include mq("md") {
         width: 12.725rem;
     }
 }

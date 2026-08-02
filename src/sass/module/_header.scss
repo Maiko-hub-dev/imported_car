@@ -2,17 +2,21 @@
 
 .header {
   width: 100%;
-  transition: background-color 0.3s ease;
   opacity: 0;
   visibility: hidden;
   transition: 2.8s ease;
 }
-
+.header__inner{
+  height: 5rem;
+  @include mq("md") {
+    height: 5.625rem;
+  }
+}
 body.is-loaded .header{
   height: 5rem;
   position: fixed;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   top: -1.25rem;
   left: 0;
@@ -23,49 +27,56 @@ body.is-loaded .header{
   background-color: rgba($skelton, 0.68);
   visibility: visible;
   opacity: 1;
-   @include mq("lg") {
+   @include mq("md") {
     height: 5.625em;
     top: 0;
-    padding: 0.5rem 2.5rem;
+    padding: 0 2.5rem;
     transform: translateY(0);
     justify-content: flex-start;
   }
 }
-
+body.is-loaded .header__inner{
+  height: 5rem;
+  @include mq("md") {
+    height: 5.625rem;
+  }
+}
 .header:has(.js-drawer.active) {
   background-color: $green;
 }
+.header.js-header{
+  transition: background-color 0.3s ease;
+}
+
 .header__skelto {
   display: block;
   height: 5rem;
-  @include mq("lg") {
-    padding-top: 0.75rem;
+  @include mq("md") {
+    height: inherit;
+    padding: 1.25rem 0 0.5rem 0;
   }
 }
 .header__link{
   display: block;
   width: 6.375rem;
-  @include mq("lg") {
+  padding-top: 1.25rem;
+  height: inherit;
+  @include mq("md") {
+    padding-top: 0;
     width: 8.3125rem;
   }
 }
 .header__nav {
   display: none;
-  @include mq("md") {
-    padding: 0;
+    &.is-active {
     display: flex;
+    height: inherit;
     align-items: center;
     justify-content: space-between;
-  }
-  @include mq("lg") {
-    height: inherit;
-    max-width: 100%;
-    // min-width: 707px;
-    padding-top: 1rem;
+    max-width: 859px;
+    width: 100%;
     margin-left: auto;
-  }
-  @include mq("xl") {
-    margin-left: 28.5%;
+    padding: 0 0 0 0.75rem;
   }
 }
 .header__btns {
@@ -79,67 +90,76 @@ body.is-loaded .header{
   height: 3rem;
   padding: 0.4375rem 0;
   z-index: 9999;
-  @include mq("lg") {
-    display: none;
-  }
 }
 
-.header__menu-button {
-  position: sticky;
-  display: block;
-  width: 2rem;
-  height: inherit;
-  padding: 0.5rem;
-  cursor: pointer;
-  right: 0;
-  @include mq("lxg") {
-    display: none;
-  }
-}
+
 
 .header__navigation{
   display: none;
-  @include mq("lg"){
+  @include mq("md"){
       display: block;
       height: 5rem;
       white-space: nowrap;
       padding: 0;
-      // margin-left: 1.25rem;
   }
 }
 .header__navigation:first-child{
-    @include mq("lg"){
+    @include mq("md"){
         margin-left: 1.25rem;
     }
 }
 .header__navigation.header__navigation-link2{
-  @include mq("lg") {
+  @include mq("md") {
     margin-left: clamp(2.5rem, 2vw, 3rem);
   }
 }
 .header__navigation.header__navigation-link3{
-  @include mq("lg") {
+  @include mq("md") {
     margin-left: clamp(2.75rem, 2vw, 3rem);
   }
 }
 .header__navigation.header__navigation-link4{
-  @include mq("lg") {
+  @include mq("md") {
     margin-left: clamp(3.5rem, 2vw, 3.75rem);
   }
 }
 .header__navigation.header__navigation-link5{
-  @include mq("lg") {
+  @include mq("md") {
     margin-left: clamp(2.5rem, 2vw, 3rem);
   }
 }
 .header__navigation-link {
   display: none;
-  @include mq("lg"){
+  @include mq("md"){
+    position: relative;
     text-decoration: none;
+    height: 5rem;
     max-width: 5.5rem;
     display: flex;
     flex-direction: column;
-    padding: 0 0;
+    padding: 1rem 0 0 0;
+  }
+}
+.header__navigation a::after{
+  @include mq("md") {
+    display: block;
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: $white;
+    bottom: 0.875rem;
+    transform: scale(0, 1);
+    transform-origin: center top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+    transition: transform 0.3s;   /*変形の時間*/
+  }
+
+}
+
+.header__navigation a:hover::after {
+  @include mq("md") {
+    transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
   }
 }
 

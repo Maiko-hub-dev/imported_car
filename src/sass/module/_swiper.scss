@@ -40,6 +40,12 @@
     min-width: 333px;
   }
 }
+.swiper-slide.campaign__swiper-slide{
+    overflow: visible; // はみ出しを許可
+  @include mq("md") {
+    height: 445px;
+  }
+}
 .swiper2 .swiper-slide img {
     // align-self: center; /* 上下の中央揃え */
     max-height: 188px;
@@ -47,8 +53,8 @@
     height: 100%;
     // aspect-ratio: (280/ 188);
     object-fit: cover; 
-    @include mq("lg") {
-      aspect-ratio: (333/ 223);
+    @include mq("md") {
+      aspect-ratio: 333/ 223;
       min-height: 223px;
       max-width: 333px;
     }
@@ -58,6 +64,11 @@
   width: 100%;
   max-width: 333px;
   box-sizing: border-box;
+  overflow: visible; 
+  height: 178px; // 画像分を引くなど
+  @include mq("md") {
+    height: 222px; // 画像分を引くなど
+  }
 }
 .slide__block--titles{
   min-height: 3.875rem;

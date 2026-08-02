@@ -1,7 +1,7 @@
 import "../sass/style.scss";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
-// import './jquery.inview.min.js';
+import './jquery.inview.min.js';
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
@@ -124,148 +124,93 @@ $(".sp-nav").on("click", function () {
   // ドロワー内リンクを押したら閉じる
   $(".sp-nav").on("click",function () {
   closeDrawer();
-  $(".js-hamberger").remove("active");
+  $(".js-hamberger").removeClass("active");
 });
 
-//  テキストが15文字以上になった場合に「…（省略記号）」でカットされるCSS の実装
-const elems = document.querySelectorAll('.blog-text');
-elems.forEach(el => {
-  const text = el.textContent;
-  if (text.length > 15) {
-    el.textContent = text.slice(0, 15) + '...';
-  }
-});
-//要素の取得とスピードの設定
 
-//  const speed = 700;
-
-// $('.js-color-slide').each(function () {
-
-//     const color = $(this).find('.info-colorbox');
-//     const image = $(this).find('.info-color-image');
-
-//     image.css('opacity', 0);
-
-//     color.css({
-//         width: 0,
-//         right: 0,
-//         left: 'auto'
-//     });
-
-//     let played = false;
-
-//     $(this).on('inview', function (event, isInView) {
-//  if (isInView) {
-
-//         color.stop(true, true).css({
-//             width: 0,
-//             right: 0,
-//             left: 'auto'
-//         });
-
-//         image.css('opacity', 0);
-
-//         color.animate({
-//             width: '100%'
-//         }, speed, function () {
-
-//             image.animate({
-//                 opacity: 1
-//             }, 200);
-
-//             color.css({
-//                 left: 0,
-//                 right: 'auto'
-//             });
-
-//             color.animate({
-//                 width: 0
-//             }, speed);
-
-//         });
-
-//     } else {
-
-//         // 画面外に出たら初期状態へ戻す
-//         image.css('opacity', 0);
-
-//         color.stop(true, true).css({
-//             width: 0,
-//             left: 'auto',
-//             right: 0
-//         });
-
-      
-//     };
-//   });
-// });
 const speed = 700;
 
 const observer = new IntersectionObserver((entries) => {
+
   entries.forEach((entry) => {
 
+    if (!entry.isIntersecting) return;
+
     const target = $(entry.target);
+
     const color = target.find(".info-colorbox");
-    const image = target.find(".info-color-image");
 
-    if (entry.isIntersecting) {
+    // VoiceとPriceを取得
+    const image = target.find(
+      ".info-color-image, picture img"
+    );
 
-      color.stop(true, true).css({
-        width: 0,
-        right: 0,
-        left: "auto",
-      });
+    // 初期状態
+    color.stop(true, true).css({
+      width: 0,
+      right: 0,
+      left: "auto",
+    });
 
-      image.css("opacity", 0);
+    image.css({
+      opacity: 0,
+    });
 
-      color.animate(
-        {
-          width: "100%",
-        },
-        speed,
-        function () {
 
-          image.animate(
-            {
-              opacity: 1,
-            },
-            200
-          );
+    // 緑幕を広げる
+    color.animate(
+      {
+        width: "100%",
+      },
+      speed,
+      function () {
+        // 画像表示
+        image.animate(
+          {
+            opacity: 1,
+          },
+          200
+        );
 
-          color.css({
-            left: 0,
-            right: "auto",
-          });
+        // 幕を左側へ移動
+        color.css({
+          left: 0,
+          right: "auto",
+        });
 
-          color.animate(
-            {
-              width: 0,
-            },
-            speed
-          );
-        }
-      );
 
-    } else {
+        // 幕を消す
+        color.animate(
+          {
+            width: 0,
+          },
+          speed
+        );
+      }
+    );
 
-      image.css("opacity", 0);
-
-      color.stop(true, true).css({
-        width: 0,
-        left: "auto",
-        right: 0,
-      });
-
-    }
+    // 一度だけ発火
+    observer.unobserve(entry.target);
   });
+
 });
 
+
+// 監視開始
 $(".js-color-slide").each(function () {
 
   const color = $(this).find(".info-colorbox");
-  const image = $(this).find(".info-color-image");
 
-  image.css("opacity", 0);
+  const image = $(this).find(
+    ".info-color-image, .price__images img"
+  );
+
+
+  // 初期状態
+  image.css({
+    opacity: 0,
+  });
+
 
   color.css({
     width: 0,
@@ -273,9 +218,12 @@ $(".js-color-slide").each(function () {
     left: "auto",
   });
 
+
   observer.observe(this);
 
 });
+
+
 
 $(".js-hamberger").on("click", function () {
     $(this).toggleClass("active");
@@ -317,7 +265,24 @@ window.addEventListener("load", async () =>{
   // header表示
 
 });
+//. headerを1024から表示する
+const mediaQuery = window.matchMedia("(min-width: 1024px)");
+const headerNav = document.querySelector(".header__nav");
+const hamburger = document.querySelector(".header__btns");
 
+function checkMedia(e) {
+  if (e.matches) {
+    headerNav.classList.add("is-active");
+    hamburger.style.display = "none";
+  } else {
+    headerNav.classList.remove("is-active");
+    hamburger.style.display = "block";
+  }
+}
+
+checkMedia(mediaQuery);
+
+mediaQuery.addEventListener("change", checkMedia);
 //. ここまで
 
 });

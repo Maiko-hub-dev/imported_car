@@ -2,11 +2,11 @@
 
 
 .first-view{
+    height: 100dvh;
     @include mq("md") {
         opacity: 0;
         transform: translateY(20px);
         transition: opacity transition-delay 4.3s ease-in;
-        height: 100%;
     }
 }
 .first-view.is-visible {
@@ -14,7 +14,9 @@
   transform: translateY(0);
   transition-delay: 1.6s;
 }
-
+.first-view__inner{
+    height: inherit;
+}
 .view__swiper{
     height: inherit;
 }
@@ -25,14 +27,12 @@
     position: absolute;
     z-index: 2;
     top: 50%;
-    left: 49.975%;
-    transform: translateY(-40%);
-    transform: translateX(-50.5%);
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 100%;
     max-width: 248px;
-    @include mq("lg") {
+    @include mq("md") {
         max-width: 496px;
-        top: 40%;
     }
 }
 .diving-title__main{
@@ -46,7 +46,7 @@
     letter-spacing: 0.54em;
     margin-top: -3rem;
     transition: 2s ease-in;
-    @include mq("lg") {
+    @include mq("md") {
         font-size: 5rem;
         letter-spacing: 0.53em;
         margin-top: 0;
@@ -59,6 +59,6 @@
     transition: 2s ease-in;
     font-size: 1.25rem;
     @include mq("md") {
-        margin-top: -0.5rem;
+        margin-top: -0.75rem;
     }
 }

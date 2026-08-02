@@ -2,11 +2,9 @@
 
 .blog {
     width: 100%;
-}
-.blog__inner{
     position: relative;
     @include mq("md") {
-    &::before {
+    &::before{
     content: "";
     position: absolute;
     top: 0;
@@ -18,15 +16,23 @@
     background-position: top center;
     background-size: cover;
     z-index: -1;
-        }
+    }
+    }
+}
+.blog__wrapper{
+    margin-top: 5rem;
+    @include mq("md") {
+        margin-top: 0;
+        padding: 4rem 0;
     }
 }
 .blog__illust{
-    @include mq("lg") {
+    @include mq("md") {
         position: absolute;
         background-image: url('../../images/common/fishes.png');
         background-repeat: no-repeat;
         background-position: center;
+        left: 0;  // 仮
         background-size: cover;
         width: min(27.3125rem, 32%);
         aspect-ratio: (437/ 201);
@@ -35,36 +41,25 @@
     }
 }
 .blog__fishes-illust{
-    @include mq("lg") {
+    @include mq("md") {
     position: absolute;
     background-image: url('../../images/common/fishes-to-right.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: min(18.5rem, 32%);
-    aspect-ratio: (437/ 201);
-    margin-top: 1.5rem;
-    margin-left: 5.25rem;
+    width: min(18.75rem, 32%);
+    aspect-ratio: 437/ 201;
+    margin-top: 0rem;
+    margin-left: 6.35rem;
+    bottom: -6rem;
 }
 }
-.blog__container {
-    padding: 5rem 1.3125rem;
-}
-.blog__wrapper {
-    @include mq("md") {
-        padding: 0 2.5rem;
-    }
-    @include mq("lg") {
-        padding: 0 5rem;
-    }
-    @include mq("xl") {
-        padding: 0 10rem;
-     }
-}
+
 .blog__titles{
     position: relative;
-    @include mq("lg") {
+    @include mq("md") {
         margin: 0 auto;
+        padding: 0.25rem 0 0 0;
     }
 }
 .blog__title{
@@ -75,16 +70,12 @@
     text-transform: capitalize;
     text-align: center;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     @include mq("md") {
         color: $white;
-    }
-    @include mq("lg") {
         font-size: 2.5rem;
-        top: 1rem;
-        padding-left: 0;
+        padding: 0 0.25rem 0 0.125rem;
     }
+
 }
 .blog__title::first-letter {
   color: $green;
@@ -104,11 +95,9 @@
     transform: translateX(-50%);
     @include mq("md") {
         color: $white;
-    }
-    @include mq("lg") {
         padding-left: 0;
-        margin-left: -0.25rem;
-        top: 1rem;
+        top: 2rem;
+        margin-top: -0.125rem;
     }
 }
 
@@ -118,15 +107,14 @@
     align-items: center;
     margin-top: 1.25rem;
     @include mq("md") {
+        display: grid;
+        grid-template-columns:repeat(3, minmax(333px, 1fr));
         flex-direction: row;
-        margin-top: 1.0625rem;
-        margin: 2.5rem auto 0;
+        margin: 2.5rem auto;
+        align-items: flex-start;
         gap: 2.5rem;
         justify-content: center;
-    }
-    @include mq("lg") {
-        margin: 1rem auto 0 -0.25rem;
-        padding-top: 5rem;
+        padding-top: 4.5rem;
     }
 }
 .blog__card{
@@ -134,13 +122,27 @@
     background-color: $white;
     padding: 1.5rem 1rem 0;
     width: 100%;
+    transition: animation 0.5s ease;
+    max-width: 600px;
     @include mq("md") {
         width: 333px;
-        padding: 1.4375rem 1rem;
+        padding: 0.9875rem 0.875rem 0.45rem 0.875rem;
+        max-width: 100%;
+        aspect-ratio: 333 /447;
+        height: 447px;
+        overflow: visible;
     }
-    @include mq("lg") {
-        padding: 1rem 1rem 0 1rem;
-    }
+
+}
+.blog__card:hover{
+    animation: shake 0.5s infinite;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
 }
 .blog__card.blog__card-next{
     padding: 1rem 1rem 0.25rem;
@@ -149,11 +151,9 @@
     @include mq("md") {
         margin-top: 0;
         width: 333px;
-        padding: 1.4375rem 1rem;
+        padding:  0.9875rem 1rem 0.45rem 0.875rem;
     }
-    @include mq("lg") {
-        padding: 1rem 1rem 0 1rem;
-    }
+
 }
 .blog__card.blog__card-third{
     padding: 1rem 1rem 0.25rem;
@@ -162,23 +162,39 @@
     @include mq("md") {
         margin-top: 0;
         width: 333px;
-        padding: 1.4375rem 1rem;
+        padding:  0.9875rem 1rem 0.45rem 0.875rem;
     }
-    @include mq("lg") {
-        padding: 1rem 1rem 0 1rem;
-    }
-}
 
+}
+.blog__card-images{
+    position: relative;
+    width: 100%;
+}
+.blog__card-images::before{
+    content:"";
+    display: block;
+    padding-top: 66.777%;
+}
 .blog__card--image{
     display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
 }
 .blog__card--contents{
     padding: 1rem 0 1.0625rem;
-    @include mq("lg") {
-    padding: 1.125rem 0 1.45rem;
+    @include mq("md") {
+    padding: 1.125rem 0 1.0625rem 0;
     }
 }
-
+.blog__card--content{
+    overflow: visible;
+    @include mq("md") {
+        aspect-ratio: 301 / 206;
+    }
+}
 .blog__card-date{
     color: $font-bk;
     font-family: $eng-fonts;
@@ -188,14 +204,14 @@
 .blog__card--titles{
     border-bottom: 1px solid $green;
     padding: 0.25rem 0 0.25rem 0;
-    @include mq("lg") {
+    @include mq("md") {
      padding: 0 0 0.25rem 0;
     }
 }
 .blog__card--contents.blog__card--contents-next .blog__card--titles{
     border-bottom: 1px solid $green;
     padding: 0.125rem 0 0.125rem 0;
-    @include mq("lg") {
+    @include mq("ｍｄ") {
      padding: 0 0 0.25rem 0;
     }
 }
@@ -214,12 +230,14 @@
     padding: 1.125rem 0 0 0;
     letter-spacing: 0.005rem;
     font-family: $base-font-family;
-    @include mq("lg") {
-     padding: 1rem 0 0 0;
+    overflow: visible;
+    @include mq("md") {
+     padding: 0.875rem 0.25rem 0 0;
+     aspect-ratio: 301 / 136;
     }
 }
 .blog__u-desktop{
-    @include mq("lg") {
+    @include mq("md") {
         display: block;
     }
 }
@@ -227,19 +245,19 @@
     line-height: 1.25;
     margin-top: 2.35rem;
     padding: 0.875rem 2.25rem;
-    @include mq("lg") {
+    @include mq("md") {
         margin: 5rem auto 0 -0.125rem;
         padding: 0.875rem 2.45rem;
     }
 }
 .blog__btn-wrap.common__btn-wrap{
-    @include mq("lg") {
+    @include mq("md") {
         width: 12.725rem;
         margin: 0 auto;
     }
 }
 .common__btn-wrap.blog__btn-wrap::before{
-    @include mq("lg") {
+    @include mq("md") {
         left:1px;
     }
 }

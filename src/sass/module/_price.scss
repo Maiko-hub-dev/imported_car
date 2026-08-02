@@ -3,38 +3,49 @@
 .price {
     width: 100%;
     margin-top: 5.25rem;
-    @include mq("lg") {
+    
+    padding: 5rem 0 5.375rem;
+    @include mq("md") {
+    padding: 3.25rem 0 3.75rem;
+    position: relative;
+    z-index: 0;
     margin-top: 5.75rem;
+   
+    }
+}
+.price__illust{
+    @include mq("md") {
+        position: absolute;
+        left: 6.25rem;
+        bottom: 3.5rem;
+        background-image: url('../../images/common/green-fishes.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: max(27.3125rem, 17%);
+        aspect-ratio: 437/ 201;
+        margin-top: 1.5rem;
+        z-index: 10;
     }
 }
 .price__inner {
-    @include mq("lg") {
-    position: relative;
-    }
-}
-.price__container{
     background-color: $light-green;
-    padding: 5rem 0.9375rem 5.375rem;
-    @include mq("sm") {
-    padding: 5rem 1.5rem 3.5rem;
-    }
-    @include mq("lg") {
-    padding: 3.25rem 5.4375rem 3.75rem;
+     padding: 2.5rem 0 ;
+    @include mq("md") {
     position: relative;
-    z-index: 0;
-    }
-    @include mq("xl") {
-    padding: 3.25rem 5.4375rem 6.5rem;
+     padding-bottom: 6.5rem;
     }
 }
+
 .price__titles{
-    @include mq("lg") {
-        padding: 0 5rem;
+    padding: 0 0.9375rem;
+    @include mq("md") {
+        padding: 0.75rem 5.4375rem 0;
     }
 }
 .price__title.common-title{
     position: relative;
-    @include mq("lg") {
+    @include mq("md") {
         top: 2.75rem;
         padding-left: 0;
         margin-left: -0.25rem;
@@ -51,8 +62,7 @@
     left: 50%;
     transform: translateX(-50%);
     top: 0;
-    @include mq("lg") {
-        // padding-left: 0.25rem;
+    @include mq("md") {
         top: 2.75rem;
         margin-left: -0.25rem;
     }
@@ -61,48 +71,64 @@
     display: flex;
     flex-direction: column-reverse;
     margin-top: 1.65rem;
+   
     @include mq("md") {
         position: relative;
         flex-direction: row;
         align-items: flex-start;
-        justify-content: space-around;
-        padding: 4.875rem 0 2.5rem;
-        margin-top: 2.5rem;
-    }
-    @include mq("lg") {
+        padding: 2.5rem 0 4.875rem;
         justify-content: space-between;
-        margin: 0 auto;
-        max-width: 1080px;
+        margin: 2.25rem auto 0;
     }
 }
 .price__contents{
     width: 100%;
     padding-top: 2.15rem;
+    max-width: 600px;
+    margin: 0 auto;
     @include mq("md") {
+    max-width: 100%;
     padding-top: 0;
-    width: 45%;
-    }
-    @include mq("lg") {
-        width: 46%;
-        padding-top: 0;
-        max-width: 492px;
-        // margin-left: 2.8125rem;
+    width: 45.75%;
+    margin: 0;
     }
 }
-.info-colorbox img {
-    display: block;
-    width: 100%;
-}
+
 .price__images{
     width: 100%;
+    position: relative;
     @include mq("md") {
-    width: 45%;
-    }
-    @include mq("lg") {
     width: auto;
-    margin-left: 3rem;
-    max-width: 492px;
-    margin-top: 0.25rem;
+    margin-left: 2rem;
+    padding-right: 0.25rem;
+    max-width: 494px;
+    margin-top: 0.5rem;
+    }
+}
+.price__images::before{
+    content: "";
+    display: block;
+    // padding-top: 65.95%;
+}
+.price__images .info-colorbox {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.price__images picture,
+.price__images picture img
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    @include mq("md") {
+        aspect-ratio: 492/ 796;
     }
 }
 .price__table {
@@ -118,6 +144,19 @@
 
   .license-title {
     font-weight: $medium;
+    padding: 0.5rem 0 0.25rem 0;
+    width: 100%;
+    border-bottom: 1px solid $green;
+    text-align: left;
+    @include mq("md") {
+        color: $font-bk;
+        line-height: 1.5;
+        font-weight: $bold;
+        padding: 0.5rem 0 0.125rem 0;
+    }
+  }
+  .license-title-div {
+    font-weight: $medium;
     padding: 0.5rem 0 0 0;
     @include mq("md") {
         width: 100%;
@@ -125,11 +164,23 @@
         line-height: 1.5;
         font-weight: $bold;
         text-align: left;
+        padding: 0.5rem 0 0rem 0;
         border-bottom: 1px solid $green;
-        
     }
   }
-
+  .license-title-div2 {
+    font-weight: $medium;
+    padding: 0.5rem 0 0 0;
+    @include mq("md") {
+        width: 100%;
+        color: $font-bk;
+        line-height: 1.5;
+        font-weight: $bold;
+        text-align: left;
+        padding: 0.5rem 0 0.25rem 0;
+        border-bottom: 1px solid $green;
+    }
+  }
   .license-content {
     width: 100%;
     text-align: left;
@@ -147,7 +198,7 @@
     color: $font-bk;
     line-height: 1.5;
     font-weight: $regular;
-    @include mq("lg") {
+    @include mq("md") {
         font-size: 1rem;
     }
   }
@@ -159,21 +210,7 @@
     height: 1.9875rem;
   }
 }
-.price__illust{
-    @include mq("lg") {
-        position: absolute;
-        left: 6.25rem;
-        bottom: 4rem;
-        background-image: url('../../images/common/green-fishes.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: max(27.3125rem, 27%);
-        aspect-ratio: 437/ 201;
-        margin-top: 1.5rem;
-        z-index: 10;
-    }
-}
+
 .price__table tr{
     display: flex;
 }
@@ -185,7 +222,7 @@
     width: 7rem;
     padding: 0.45rem 0 0.125rem 0rem;
     text-align: right;
-    @include mq("lg") {
+    @include mq("md") {
         display: inline-block;
         font-size: 1rem;
         margin-right: 0.125rem;
@@ -207,40 +244,41 @@
 .price__table .price__table-tr{
     padding: 0.25rem 0 0 0;
     @include mq("md") {
-    padding: 0.5rem 0 0 0;
+    padding: 0rem 0 0 0;
     }
 }
+
  .license-content.license-content-next{
     padding: 0.5rem 0 0 0;
     font-size: 0.875rem;
     @include mq("md") {
-    padding: 0.5rem 0 0 0;
+    padding: 0.45rem 0 0 0;
     vertical-align: middle;
     font-size: 1rem;
     }
 }
 .license-prices  .license-price{
     padding: 0.75rem 0 0.125rem 0rem;
-    @include mq("lg") {
-    padding: 0.35rem 0 0.125rem 0rem;
+    @include mq("md") {
+    padding: 0.45rem 0 0.125rem 0rem;
     }
 }
  .licence__experience  .license-price{
     padding: 0.75rem 0 0.125rem 0rem;
-    @include mq("lg") {
+    @include mq("md") {
     padding: 0.35rem 0 0.125rem 0rem;
     }
 }
 .license-prices-ex  .license-price{
     padding: 0.5rem 0 0.125rem 0rem;
     @include mq("md") {
-    padding: 0.25rem 0 0.125rem 0rem;
+    padding: 0.35rem 0 0.125rem 0rem;
     }
 }
 .license-prices-beach  .license-price{
      padding: 0.75rem 0 0.125rem 0rem;
-    @include mq("lg") {
-        padding: 0.25rem 0 0.125rem 0rem;
+    @include mq("md") {
+        padding: 0.5rem 0 0.125rem 0rem;
     }
 }
 .license-prices-beach .license-prices-ex{
@@ -249,8 +287,14 @@
 }
 .license-prices-ex  .license-content{
     padding: 0.5rem 0 0.125rem 0rem;
-    @include mq("lg") {
-    padding: 0.45rem 0 0.125rem 0rem;
+    @include mq("md") {
+    padding: 0.35rem 0 0.125rem 0rem;
+    }
+}
+ .license-content.license-content-div{
+    padding: 0.5rem 0 0.125rem 0rem;
+    @include mq("md") {
+    padding: 0.4875rem 0 0.125rem 0rem;
     }
 }
 .license-prices-ex.license-prices-ex2{
@@ -262,8 +306,8 @@
 .common__btn.price__btn{
     margin-top: 2.375rem;
     padding: 0.75rem 2.25rem;
-    @include mq("lg") {
-        margin: 2.75rem auto 0 -0.125rem;
+    @include mq("md") {
+        margin: 0.25rem auto 0 -0.125rem;
         padding: 0.875rem 2.45rem;
     }
 }

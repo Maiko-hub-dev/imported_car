@@ -3,36 +3,33 @@
 .information{
     width: 100%;
     margin-top: 1.265rem;
-    @include mq("lg") {
-        margin-top: 5.65rem;
-      
+    background-color: $light-green;
+    @include mq("md") {
+    margin-top: 8.5rem;
+    padding: 3.25rem 0 4.25rem 0;
     }
 }
 .information__inner{
+    width: 100%;
     padding: 5rem 0.9375rem;
-    background-color: $light-green;
     @include mq("md") {
-        padding: 5.25rem 2.5rem;
-    }
-    @include mq("lg") {
-          padding: 4.25rem 5.5rem 6.125rem;
+    padding: 1rem 0 2rem; 
     }
 }
 .information__container{
     padding: 0;
-    @include mq("lg") {
-    padding: 0 5rem;
+    @include mq("md") {
+    padding: 0 1rem 0; 
     }
 }
 .information__titles{
     width: 17.5625rem;
     margin: 0 auto;
-    border: 1px solid $green;
     padding: 0 0 0.25rem 0;
-    @include mq("lg") {
+    @include mq("md") {
         border: none;
         width: 100%;
-        padding: 0 0.5rem;
+        padding: 0 0.5rem 0 0.65rem;
     }
 }
 .information__subtitle{
@@ -44,7 +41,7 @@
     margin-top: 0.25em;
     position: relative;
     
-    @include mq("lg") {
+    @include mq("md") {
         padding-left: 0.25rem;
         top: 2rem;
         margin-top: 0;
@@ -53,9 +50,8 @@
 }
 .information__licence{
     margin-top: 1.35rem;
-    @include mq("lg") {
-        margin-top: 2.125rem;
-        // padding-left: 1rem;
+    @include mq("md") {
+        margin-top: 2.25rem;
     }
 }
 
@@ -68,7 +64,7 @@
     text-align: center;
     position: relative;
     font-weight: $regular;
-    @include mq("lg") {
+    @include mq("md") {
         font-size: 2.5rem;
         top: 1.75rem;
         padding-left: 0.25rem;
@@ -76,26 +72,31 @@
     }
 }
 .information__frame{
-    @include mq("lg") {
+    @include mq("md") {
         width: 100%;
         display: block;
         max-width: 540px;
     }
 }
 .information__wrapper{
+    position: relative;
     display: flex;
     flex-direction: column;
-    @include mq("lg") {
+    margin-top: 1.25rem;
+    @include mq("md") {
         flex-direction: row;
         align-items: center;
-        padding: 2rem 0.5rem 0;
+        margin-top: 2.5rem;
+        padding: 2rem 0.45rem 0;
         justify-content: flex-start;
     }
 }
 .information__colorbox{
     display: block;
     margin-top: 1.5rem;
-    @include mq("lg") {
+    position: relative;
+    overflow: hidden;
+    @include mq("md") {
         margin-top: 2.35rem;
         width: 50%;
         margin-right: 1rem;
@@ -103,6 +104,11 @@
 }
 .js-color-slide{
     position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    @include mq("md") {
+        margin: 0;
+    }
 }
 .js-color-slide .info-colorbox{
     position: absolute;
@@ -122,9 +128,11 @@
 .information__content{
     position: relative;
     z-index: 1;
-    @include mq("lg") {
+    max-width: 600px;
+    margin: 0 auto;
+    @include mq("md") {
         width: 50%;
-        margin-left: 1.5rem;
+        margin: 0 1.5rem 0 3rem;
         max-width: 492px;
     }
 }
@@ -138,24 +146,21 @@
     border-bottom: 1px solid $green;
     padding-bottom: 0.125rem;
     padding: 0 0 0.25rem 0;
-    text-shadow: 1px 1px 1px $font-bk;
-    @include mq("lg") {
+    @include mq("md") {
     font-size: 1.5rem;
     text-shadow: none;
-    padding: 0 0 0.125rem 0.125rem;
-    // -webkit-text-stroke-color: none;
-    // -webkit-text-stroke-width: 0;
+    padding: 0 0 0.25rem 0.25rem;
     }
 }
 .information__description{
     color: $font-bk;
     font-family: $base-font-family;
     line-height: 1.5;
-    text-shadow: 1px 1px 1px $green;
+    // text-shadow: 1px 1px 1px $green;
     margin: 0;
     font-size: 1rem;
     padding: 0.5rem 0;
-    @include mq("lg") {
+    @include mq("md") {
     font-size: 1rem;
     letter-spacing: 0.01em;
     padding: 0;
@@ -163,22 +168,19 @@
     margin: 0.5rem 0;
     text-shadow: none;
     padding: 0 0.25rem;
-}
-@include mq("xl") {
-    min-width: 492px;
     }
 }
 .information__viewmore.common__btn-wrap{
-    @include mq("lg") {
+    @include mq("md") {
         margin-top: 2.5rem;
         width: 12.725rem;
-        // transform: translateX(-0.5rem);
 }
 }
 .information__btn.common__btn{
     margin-top: 2rem;
     padding: 0.875rem 2.25rem;
-    @include mq("lg") {
+    @include mq("md") {
         margin-top: 0;
+        margin-left: 0.25rem;
     }
 }
