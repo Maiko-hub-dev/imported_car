@@ -111,7 +111,7 @@
 .voice__card--image{
     display: block;
     position: relative;
-    aspect-ratio: (151/117);
+    aspect-ratio: 151/117;
     max-width: 151px;
     margin: 0 0.75rem;
     @include mq("md") {

@@ -74,10 +74,10 @@
     right: 1rem;
     top: 3.5rem;
     height: auto;
-    aspect-ratio: (109 /50);
+    aspect-ratio: 109 /50;
 
     @include mq("md") {
-    aspect-ratio: (301 /138);
+    aspect-ratio: 301 /138;
     width: max(18.8125rem, 22%);
     right: 2.75rem;
     top: 6.25rem;
@@ -165,7 +165,7 @@
 .contact__btns{
     width: 100%;
     @include mq("md") {
-        aspect-ratio: (477 / 295);
+        aspect-ratio: 477 / 295;
         margin-top: 0;
         // padding-left: 0;
         width: 45%;
