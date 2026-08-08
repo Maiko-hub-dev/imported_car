@@ -1,7 +1,6 @@
 import "../sass/style.scss";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
-import './jquery.inview.min.js';
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
