@@ -2,7 +2,7 @@
 
 .voice {
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 5.25rem;
     @include mq("md") {
         margin-top: 3rem;
     }
@@ -75,7 +75,7 @@
 .voice__card{
     display: block;
     box-shadow: 2px 2px 8px rgba($black, 0.25);
-    padding: 0.5rem 1rem 1.5rem 1.125rem;
+    padding: 0.5rem 1rem 1.5rem 1rem;
     background-color: $white;
     width: 100%;
     max-width: 600px;
@@ -113,11 +113,13 @@
     position: relative;
     aspect-ratio: 151/117;
     max-width: 151px;
-    margin: 0 0.75rem;
+    margin: 0;
+    width: 100%;
     @include mq("md") {
         min-width: 185px;
         aspect-ratio: 180/ 140;
         margin-left: 0rem;
+        width: 38.1%;
         padding: 0.125rem 0.125rem 0 0;
     }
 }
@@ -171,7 +173,9 @@
     flex-direction: column;
     justify-content: space-around;
     transition: border-bottom 0.3s ease;
+    width: 47.1%;
     @include mq("md") {
+        width: 58.47%;
         padding: 0;
         max-width: 276px;
     }
@@ -201,14 +205,16 @@
     font-weight: $regular;
     padding-bottom: 0.25rem;
     line-height: 1.25;
-    margin-top: 1rem;
+    margin-top: 0.8975rem;
     width: fit-content;
+    letter-spacing: 0.09em;
     transition: color 0.3s ease;
     @include mq("md") {
         width: 3.625rem;
         font-size: 0.75rem;
         padding-top: 1.45rem;
         margin-top: 1.75rem;
+        letter-spacing: normal;
     }
 }
 .voice__card-age.voice__card-age-fan{
@@ -216,7 +222,7 @@
     font-family: $base-font-family;
     color: $font-bk;
     font-weight: $regular;
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.125rem;
     line-height: 1.25;
     margin-top: 1rem;
     width: fit-content;
@@ -231,23 +237,25 @@
 .voice__card:hover .voice__card-age{
     color: $white;
 }
+.voice__titles{
+    display: flex;
+    flex-direction: column-reverse;
+}
 .voice__card-title{
     font-family: $base-font-family;
     font-weight: $medium;
     line-height: 1.1875;
-    padding-bottom: 1.125rem;
-    margin-top: 0.25rem;
+    padding-bottom: 1rem;
+    margin-top: 0;
     @include mq("md") {
     font-size:  clamp(1.5em, 1vw, 2rem);
     letter-spacing: normal;
     padding-right: 0.25rem;
     font-weight: $normal;
-    margin-top: 0;
     padding-bottom: 0.25rem;
     line-height: 1.35;
     }
 }
-
 
 .voice__card--txt{
     color: $font-bk;
@@ -267,7 +275,7 @@
     display: inline-block;
     color: $green;
     border: $green solid 1px;
-    padding: 0.125rem 0.75rem;
+    padding: 0.125rem 0.75rem 0.25rem;
     line-height: 1.8333;
     font-size: 0.75rem;
     font-family: $base-font-family;
@@ -282,13 +290,17 @@
     }
 }
 .voice__active-content.voice__active-content-fan{
-    min-width: 7.875rem;
+    min-width: 7.5rem;
+    padding: 0.125rem 0.75rem 0.25em;
     @include mq("md") {
+        padding: 0.125rem 0.75rem;
+        min-width: 7.875rem;
         margin-left: 5.75rem;
     }
 }
 .voice__btn.common__btn{
     transition: transform .5s ease;
+    padding: 0.9875rem 2.25rem 0.75rem;
     cursor: pointer;
     @include mq("md") {
     margin-top: 3.5rem;
@@ -309,5 +321,12 @@
     aspect-ratio: 71 / 162;
     }
 }
-
+.voice__card--titles.voice__card--titles2 .voice__card-title{
+    margin-top: 0.125rem;
+    line-height: 1.4375;
+    padding-bottom: 0.125rem;
+    @include mq("md") {
+        margin-top: 0;
+    }
+  }  
 

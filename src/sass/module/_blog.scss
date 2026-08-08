@@ -26,6 +26,11 @@
         padding: 4rem 0;
     }
 }
+.blog__container{
+    @include mq("md") {
+        padding: 0 0.9375rem;
+    }
+}
 .blog__illust{
     @include mq("md") {
         position: absolute;
@@ -57,6 +62,8 @@
 
 .blog__titles{
     position: relative;
+    display: flex;
+    flex-direction: column-reverse;
     @include mq("md") {
         margin: 0 auto;
         padding: 0.25rem 0 0 0;
@@ -70,6 +77,7 @@
     text-transform: capitalize;
     text-align: center;
     position: relative;
+    margin-top: 0.25rem;
     @include mq("md") {
         color: $white;
         font-size: 2.5rem;
@@ -105,14 +113,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1.25rem;
+    margin: 1.5rem 0.375rem 0;
     @include mq("md") {
         display: grid;
         grid-template-columns:repeat(3, minmax(333px, 1fr));
         flex-direction: row;
         margin: 2.5rem auto;
+        padding: 0 0.9375rem;
         align-items: flex-start;
         gap: 2.5rem;
+        max-width: $inner;
         justify-content: center;
         padding-top: 4.5rem;
     }
@@ -120,7 +130,7 @@
 .blog__card{
     box-shadow: 2px 2px 8px rgba($black, 0.25);
     background-color: $white;
-    padding: 1.5rem 1rem 0;
+    padding: 1.25rem 1rem 0;
     width: 100%;
     transition: animation 0.5s ease;
     max-width: 600px;
@@ -151,9 +161,21 @@
     @include mq("md") {
         margin-top: 0;
         width: 333px;
-        padding:  0.9875rem 1rem 0.45rem 0.875rem;
+        padding: 0.9875rem 1rem 0.45rem 0.875rem;
     }
 
+}
+.blog__card.blog__card-next .blog__card--titles{
+    padding: 0.25rem 0 0.125rem 0;
+}
+.blog__card.blog__card-next .blog__card-title{
+    margin-top: 0;
+}
+.blog__card.blog__card-third .blog__card--titles{
+    padding: 0rem 0 0.25rem 0;
+}
+.blog__card.blog__card-third .blog__card-title{
+    margin-top: 0;
 }
 .blog__card.blog__card-third{
     padding: 1rem 1rem 0.25rem;
@@ -189,6 +211,12 @@
     padding: 1.125rem 0 1.0625rem 0;
     }
 }
+.blog__card-next .blog__card--contents{
+    padding: 0.75rem 0 1.0625rem;
+     @include mq("md") {
+    padding: 1.125rem 0 1.0625rem 0;
+    }
+}
 .blog__card--content{
     overflow: visible;
     @include mq("md") {
@@ -216,8 +244,13 @@
     }
 }
 .blog__card-title{
+    font-weight: $regular;
     font-family: $base-font-family;
-    font-weight: $medium;
+    margin-top: -0.125rem;
+    @include mq("md") {
+        font-weight: $medium;
+        margin-top: 0;
+    }
 }
 .blog__card--line{
     border: none;
@@ -227,7 +260,7 @@
 .blog__card--txt{
     color: $font-bk;
     line-height: 1.5;
-    padding: 1.125rem 0 0 0;
+    padding: 0.9875rem 0 0 0;
     letter-spacing: 0.005rem;
     font-family: $base-font-family;
     overflow: visible;
@@ -243,7 +276,7 @@
 }
 .common__btn.blog__btn{
     line-height: 1.25;
-    margin-top: 2.35rem;
+    margin-top: 2.75rem;
     padding: 0.875rem 2.25rem;
     @include mq("md") {
         margin: 5rem auto 0 -0.125rem;

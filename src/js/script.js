@@ -22,11 +22,12 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   // ボタンの表示設定
   $(window).on('scroll resize', function (){
+
     const scrollTop = $(window).scrollTop();
     const windowHeight = $(window).height();
     const footerTop = footer.offset().top;
     
-    const overlap = scrollTop + windowHeight - footerTop;
+    // const overlap = scrollTop + windowHeight - footerTop;
 
 
   // ===== ボタンの表示・非表示 =====
@@ -35,16 +36,32 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   } else {
     topBtn.fadeOut();
   }
-  // ===== footerに重ならないようにする =====
-  if (overlap > 0) {
-      topBtn.css({
-          bottom: overlap + 20
-        });
-      } else {
-        topBtn.css({
-          bottom: 20
-        });
-  } 
+// ↑ SPは8px（20pxより12px下げる）
+// ↑ PCは7%（CSSに合わせる）
+  const footerBottom = mediaQuery.matches
+  ? footer.outerHeight() + 20
+  : footer.outerHeight() + 13;
+  // SP・PCでbottomの初期値を切り替え
+const bottomPosition = window.innerWidth >= 1024 ?  '7%' :'2px';
+
+
+// ===== footerに重ならないようにする =====
+if (scrollTop + windowHeight > footerTop) {
+
+  topBtn.css({
+    position: 'absolute',
+    bottom: footerBottom
+  });
+
+} else {
+
+  topBtn.css({
+    position: 'fixed',
+    bottom: bottomPosition
+  });
+
+}
+
   });
 
   // ボタンをクリックしたらスクロールして上に戻る

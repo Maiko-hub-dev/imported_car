@@ -322,8 +322,8 @@
       <div class="campaign__container">
         <div class="campaign__wrapper">
         <div class="campaign__head">
-          <h3 class="campaign__title common-title">campaign</h3>
           <h2 class="campaign__subtitle">キャンペーン</h2>
+          <h3 class="campaign__title common-title">campaign</h3>
         
          <div class="campaign__navigation">
             <div class="campaign-button-prev"></div>
@@ -481,8 +481,10 @@
     <div class="aboutus__inner inner inner--about">
       <div class="aboutus__container">
         <div class="aboutus__wrapper">
-        <h3 class="aboutus__title common-title">aboutus</h3>
-          <h2 class="aboutus__subtitle">私たちについて</h2>
+          <div class="aboutus__head">
+            <h2 class="aboutus__subtitle">私たちについて</h2>
+          <h3 class="aboutus__title common-title">aboutus</h3>
+          </div>
             <div class="aboutus__content">
             <div class="aboutus__framework framework">
               <div class="aboutus__content-left">
@@ -530,8 +532,8 @@
     <div class="information__inner inner inner--information">
       <div class="information__container">
         <div class="information__titles">
-          <h3 class="information__title common-title">information</h3>
           <h2 class="information__subtitle">ダイビング情報</h2>
+          <h3 class="information__title common-title">information</h3>
         </div>
           <div class="information__wrapper">
             <div class="information__colorbox info-color js-color-slide">
@@ -559,8 +561,8 @@
       <div class="blog__container">
         <div class="blog__wrapper">
           <div class="blog__titles">
-            <h2 class="blog__title common-title">Blog</h2>
-            <h3 class="blog__subtitle">ブログ</h3>
+            <h2 class="blog__subtitle">ブログ</h2>
+            <h3 class="blog__title common-title">Blog</h3>
           </div>
           <div class="blog__cards">
             <a href="#" class="blog__card">
@@ -619,9 +621,10 @@
     <div class="voice__inner inner inner--voice">
       <div class="voice__container">
         <div class="voice__wrapper">
-          <h2 class="voice__title common-title">voice</h2>
-          <h3 class="voice__subtitle">お客様の声</h3>
-
+          <div class="voice__titles">
+            <h2 class="voice__subtitle">お客様の声</h2>
+          <h3 class="voice__title common-title">voice</h3>
+          </div>
         <div class="voice__cards">
         <a href="#" class="voice__card">
           <div class="voice__card--who">
@@ -647,7 +650,7 @@
         <a href="#" class="voice__card">
           <div class="voice__card--who">
           <div class="voice__card--contents">
-            <div class="voice__card--titles">
+            <div class="voice__card--titles voice__card--titles2">
               <div class="voice__card-heading voice__active voice__active2">
               <p class="voice__card-age voice__card-age-fan">30代(男性)</p>
               <h4 class="voice__active-content voice__active-content-fan">ファンダイビング</h4>
@@ -681,8 +684,8 @@
     <div class="price__inner">
       <div class="price__container inner inner--price">
         <div class="price__titles">
-        <h2 class="price__title common-title">price</h2>
-        <h3 class="price__subtitle">料金一覧</h3>
+          <h2 class="price__subtitle">料金一覧</h2>
+        <h3 class="price__title common-title">price</h3>
         </div>
         <div class="price__wrapper">
           <div class="price__contents">
@@ -707,9 +710,9 @@
             </tbody>
             <tbody class=licence__experience>
               <tr class="license-prices">
-                <th colspan="2" class="license-title">体験ダイビング</th>
+                <th colspan="2" class="license-title license-title-experiense">体験ダイビング</th>
               </tr>
-              <tr>
+              <tr class="price__table-tr2">
                 <td class="license-content">ビーチ体験ダイビング(半日)</td>
                 <td class="license-price">¥7,000</td>
               </tr>
@@ -721,16 +724,16 @@
                 <td class="license-content">ボート体験ダイビング(半日)</td>
                 <td class="license-price">¥10,000</td>
               </tr>
-              <tr class="license-prices-ex">
+              <tr class="license-prices">
                 <td class="license-content">ボート体験ダイビング(1日)</td>
                 <td class="license-price">¥18,000</td>
               </tr>
             </tbody>
             <tbody class=licence__experience>
               <tr>
-                <th colspan="2" class="license-title license-title-div">ファンダイビング</th>
+                <th colspan="2" class="license-title license-title-div3">ファンダイビング</th>
               </tr>
-              <tr>
+              <tr class="license-prices">
                 <td class="license-content">ビーチダイビング(2ダイブ)</td>
                 <td class="license-price">¥14,000</td>
               </tr>
@@ -739,8 +742,8 @@
                 <td class="license-price">¥18,000</td>
               </tr>
               <tr class="license-prices-ex price__table-tr">
-                <td class="license-content">スペシャルダイビング(2ダイブ)</td>
-                <td class="license-price">¥24,000</td>
+                <td class="license-content license-content-special">スペシャルダイビング(2ダイブ)</td>
+                <td class="license-price  license-content-special">¥24,000</td>
               </tr>
               <tr class="license-prices-ex license-prices-ex2">
                 <td class="license-content">ナイトダイビング(1ダイブ)</td>
@@ -749,13 +752,13 @@
             </tbody>
             <tbody class=licence__experience>
               <tr>
-                <th colspan="2" class="license-title license-title-div2 ">スペシャルダイビング</th>
+                <th colspan="2" class="license-title license-title-div3">スペシャルダイビング</th>
               </tr>
-              <tr class="license-prices-ex price__table-tr">
+              <tr>
                 <td class="license-content">貸切ダイビング(2ダイブ)</td>
                 <td class="license-price">¥24,000</td>
               </tr>
-              <tr>
+              <tr class="price__table price__table-tr">
                 <td class="license-content">1日ダイビング(3ダイブ)</td>
                 <td class="license-price">¥32,000</td>
               </tr>
@@ -809,8 +812,8 @@
           </div>
           <div class="contact__btns">
             <div class="contact__btns--wrapper">
-            <h2 class="contact__title-btn common-btn">contact</h2>
-            <h3 class="contact__subtitle">お問い合わせ</h3>
+            <p class="contact__title-btn common-btn">contact</p>
+            <h2 class="contact__subtitle">お問い合わせ</h2>
             <p class="contact__guide">ご予約・お問い合わせはコチラ</p>
                     <!-- ボタン -->
             <div class="contact__btn-wrap common__btn-wrap">
@@ -858,17 +861,17 @@
               <span class="footer__link-main footer__link-main-main">キャンペーン</span>
             </a>
           </li>
-          <li class="footer__item footer__inner-content">
+          <li class="footer__item footer__inner-content footer__inner-content2">
             <a href="#licence" class="footer__link">
               <span class="footer__link-content footer__link-content2">ライセンス取得</span>
             </a>
           </li>
-          <li class="footer__item footer__inner-content">
+          <li class="footer__item footer__inner-content footer__item2">
             <a href="#rental" class="footer__link">
               <span class="footer__link-content footer__link-content2">貸切体験ダイビング</span>
             </a>
           </li>
-          <li class="footer__item footer__inner-content">
+          <li class="footer__item footer__inner-content footer__item3">
             <a href="#night-diving" class="footer__link">
               <span class="footer__link-content footer__link-content2">ナイトダイビング</span>
             </a>
@@ -887,17 +890,17 @@
                 <span class="footer__link-content footer__link-main footer__study2">ダイビング情報</span>
               </a>
             </li>
-            <li class="footer__item footer__inner-content">
+            <li class="footer__item footer__inner-content footer__inner-content3 footer__inner-content2">
               <a href="#licence-get" class="footer__link">
                 <span class="footer__link-content footer__link-content2">ライセンス講習</span>
               </a>
             </li>
-            <li class="footer__item footer__inner-content">
+            <li class="footer__item footer__inner-content footer__experience-con">
               <a href="#experiecse" class="footer__link">
                 <span class="footer__link-content footer__link-content2">体験ダイビング</span>
               </a>
             </li>
-            <li class="footer__item footer__inner-content">
+            <li class="footer__item footer__inner-content footer__item3 footer__inner-content2">
               <a href="#fan-diving" class="footer__link">
                 <span class="footer__link-content footer__link-content2">ファンダイビング</span>
               </a>
@@ -925,24 +928,24 @@
                 <span class="footer__link-content footer__link-main footer__link-main-main">料金一覧</span>
               </a>
             </li>
-            <li class="footer__item footer__inner-content footer__inner-content2">
+            <li class="footer__item footer__inner-content footer__inner-content4 footer__experience-con">
               <a href="#licence-get" class="footer__link">
                 <span class="footer__link-content footer__link-content2">ライセンス講習</span>
               </a>
             </li>
-            <li class="footer__item footer__inner-content footer__inner-content2">
+            <li class="footer__item footer__item4 footer__inner-content footer__item footer__inner-content4">
               <a href="#experiecse" class="footer__link">
                 <span class="footer__link-content footer__link-content2">体験ダイビング</span>
               </a>
             </li>
-            <li class="footer__item footer__inner-content footer__inner-content2">
+            <li class="footer__item footer__inner-content footer__item3 footer__inner-content4">
               <a href="#fan-diving" class="footer__link">
                 <span class="footer__link-content footer__link-content2">ファンダイビング</span> 
               </a>
             </li>
          </ul>
           <ul class="footer__items-left footer-content footer-content-space footer__navigation">
-            <li class="footer__item footer__head3">
+            <li class="footer__item footer__head-div2">
               <a href="#blog" class="footer__link footer__link-title ">
                 <img src="./src/images/common/hitode.png" class="footer__logo" alt="ヒトデのアイコン">
                 <span class="footer__link-content footer__link-main footer__link-main-main">よくある質問</span>
@@ -954,13 +957,13 @@
                 <span class="footer__content footer__link-main-pri footer__link-main"><span>プライバシー</span><br class="u-mobile"><span class="footer__second">ポリシー</span></span>
               </a>
             </li>
-            <li class="footer__item footer__head2 footer__pri">
+            <li class="footer__item footer__div3">
               <a href="#blog" class="footer__link footer__link-title">
                 <img src="./src/images/common/hitode.png" class="footer__logo" alt="ヒトデのアイコン">
                 <span class="footer__link-content footer__link-main footer__link-main-main">利用規約</span>
               </a>
             </li>
-            <li class="footer__item footer__head2  footer__pri">
+            <li class="footer__item footer__div3">
               <a href="#blog" class="footer__link footer__link-title">
                 <img src="./src/images/common/hitode.png" class="footer__logo" alt="ヒトデのアイコン">
                 <span class="footer__link-content  footer__link-main footer__link-main-main">お問い合わせ</span>
@@ -974,7 +977,7 @@
       </div>
     </div>
     <div class="footer__copyrights">
-      <p class="footer__copyright-txt"><span class="footer__sub">Copyright&nbsp;</span><span class="footer__sub">&copy; 2021 - 2023</span><span class="footer__sub">&nbsp;CodeUps LLC.</span><span class="footer__sub">&nbsp;All Rights Reserved.</span></p>
+      <p class="footer__copyright-txt"><span class="footer__sub">Copyright&nbsp;</span><span class="footer__sub">&copy; 2021 - 2023</span><span class="footer__sub footer__sub-sub">&nbsp;CodeUps LLC.</span><span class="footer__sub footer__sub-sub">&nbsp;All Rights Reserved.</span></p>
     </div>
   </footer>
 </main>

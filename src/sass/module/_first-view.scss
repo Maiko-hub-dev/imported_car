@@ -31,7 +31,9 @@
     transform: translate(-50%,-50%);
     width: 100%;
     max-width: 248px;
+    padding-top: 2.5rem;
     @include mq("md") {
+        padding-top: 0;
         max-width: 496px;
     }
 }

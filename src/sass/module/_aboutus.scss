@@ -2,8 +2,9 @@
 
 .aboutus {
     width: 100%;
+    margin-top: 4.75rem;
     @include mq("md") {
-        margin-top: 4.125rem;
+        margin-top: 4.5rem;
         position: relative;
     }
 }
@@ -22,31 +23,39 @@
     margin-top: 1.5rem;
     position: relative;
 }
+.aboutus__head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  position: relative;
+}
 .aboutus__title.common-title{
     position: relative;
     padding: 0 0.25rem;
     font-size: 2rem;
     font-weight: $regular;
+    width: 100%;
     letter-spacing: 0.025em;
     @include mq("md") {
         text-align: center;
-        left: 47.5%;
-        transform: translateX(-47.5%);
-        margin-right: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
         letter-spacing: 0.02em;
-        padding: 0 0.25em 0 0.5rem;
+        padding: 0 0.25em 0 0.15em;
         font-size: 2.5rem;
         margin-top: -0.5rem;
     }
 }
 .aboutus__content{
     position: relative;
+    padding-top: 1.65rem;
 }
 .aboutus__framework{
     position: relative;
     width: 100%;
     aspect-ratio: 345 / 212;
-    margin-top: 1.75rem;
+    margin-top: 1.5rem;
     margin-bottom: 2.5625rem;
     @include mq("md") {
         margin-top: 4.125rem;
@@ -90,9 +99,9 @@
     right: 0;
     width: 100%;
     z-index: -1;
-    padding-top: 2rem;
+    padding-top: 1.65rem;
     @include mq("md") {
-        padding-top: 1rem;
+        padding-top: 0;
         bottom: 0;
     }
 }
@@ -130,7 +139,6 @@
     line-height: 1;
     color: $green;
     font-weight: $regular;
-    margin-bottom: 1rem;
     @include mq("md") {
         font-size: clamp(3.25rem, 6vw, 5rem);
         line-height: 1.25;
@@ -146,7 +154,6 @@
     display: block;
     content: "";
     width: 100%;
-    margin-top: 0.5rem;
     @include mq("md") {
     margin-top: -0.25rem;
     }
@@ -157,7 +164,7 @@
     top: 100%;
     transform: translate(-45%, -100%);
     width: 12.625rem;
-    margin: 5rem 0 0 0;
+    margin: 5.125rem 0 0 0;
     &::before{
     content: "";
     position: absolute;
@@ -167,7 +174,6 @@
     width: inherit;
     height: 100%;
     border: 1px solid $green;
-    pointer-events: none;
     }
     @include mq("md") {
     left: 50%;
@@ -178,9 +184,11 @@
 }
 .aboutus__messages{
     position: relative;
+    padding-top: 0.875rem;
     @include mq("md") {
         width: 56.1%;  // aboutus__textcontainerに対する比率
         margin-left: clamp(0.5rem, 0.75vw , 1rem);
+        padding-top: 0;
     }
 }
 .aboutus__viewmore-button{
@@ -199,7 +207,7 @@
     background-color: $green;
     border: 1px solid $green;
     width: 12.625rem;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2.25rem;
     margin-top: 1.65rem;
 
     position: relative;
@@ -275,7 +283,7 @@
     font-family: $base-font-family;
     font-size: 1rem;
     line-height: 1.5;
-    letter-spacing: 0.005em;
+    letter-spacing: normal;
     font-weight: $regular;
     @include mq("md") {
         color: $white;

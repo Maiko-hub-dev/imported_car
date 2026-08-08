@@ -5,10 +5,10 @@
     overflow: hidden;
 }
 .campaign__inner{
-    padding: 2.5rem 0.9375rem 0;
+    padding: 1.25rem 0.9375rem 0;
     margin-top: 2.5rem;
     @include mq("md") {
-        padding: 2.35em 0;
+        padding: 2.35em 0.9375rem;
         margin-top: 2rem;
         max-width: 1080px;
         margin-inline: auto;
@@ -22,7 +22,8 @@
 }
 .campaign__head {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex-direction: column-reverse;
   align-items: flex-end;
   position: relative;
 }
@@ -30,7 +31,6 @@
     font-weight: $regular;
     @include mq("md") {
         padding-left: 0;
-        transform: translateX(-50.75%);
     }
 }
 .campaign__navigation {
@@ -89,13 +89,12 @@
     }
 }
 .contents__inner.swiper2 {
-    padding: 2rem 0 1.5rem ;
+    padding: 3.25rem 0 1.5rem ;
     @include mq("md") {
         width: calc(50vw + 540px);
         padding: 0;
     }
 }
-
 .slide__block{
     width: 100%;
     padding: 1rem;
@@ -221,7 +220,7 @@
     margin-top: 0rem;
     padding: 0.875rem 2.25rem;
     @include mq("md") {
-        margin-top: 4.5rem;
+        margin-top: 4rem;
     }
 }
 .campaign__viewmore.common__btn-wrap{

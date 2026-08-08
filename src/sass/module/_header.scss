@@ -83,13 +83,13 @@ body.is-loaded .header__inner{
   position: fixed;
   display: flex;
   right: 0;
-  // right: 0.9375rem;
   align-items: center;
   justify-content: center;
   width: 3.5rem;
   height: 3rem;
   padding: 0.4375rem 0;
   z-index: 9999;
+  margin-top: 0.5rem;
 }
 
 

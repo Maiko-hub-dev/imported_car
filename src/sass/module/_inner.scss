@@ -12,6 +12,11 @@
       padding-right: $padding-pc;
       padding-left: $padding-pc;
     }
+    &.footer__inner {
+    max-width: 1100px;
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
     .inner--footer{
       padding-inline: 0.875rem;
       max-width: 375px;
@@ -29,6 +34,7 @@
     .inner--blog{
       padding-inline: 1.3125rem;
     }
+  
   }
 } @else {
   .inner {

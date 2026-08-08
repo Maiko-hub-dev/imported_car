@@ -25,13 +25,12 @@
     font-size: 0.75rem;
     line-height: 1.5;
     text-align: center;
-    margin-top: 0.25em;
+    margin-top: 0.5em;
+    width: 100%;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
+    top: 1rem;
     @include mq("md") {
-        top: 0;
+        top: 4.75rem;
         aspect-ratio: 72 / 16;
     }
 }
@@ -41,14 +40,16 @@
     font-size: 0.75rem;
     line-height: 1.5;
     text-align: center;
-    margin-top: 0.25em;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 2.25em;
+    position: absolute;
+    padding: 0 0.125rem;
+    width: 100%;
+    top: 1rem;
     @include mq("md") {
+        letter-spacing: normal;
         padding-left: 0;
         margin-left: -0.25rem;
-        top: 1.75rem;
+        top: 4.25rem;
     }
 }
 .common__btn--txt{
