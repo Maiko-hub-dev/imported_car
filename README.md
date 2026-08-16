@@ -1,7 +1,7 @@
-# diving_codeups
+# Imported Car
 
 
-ダイビングショップのコーポレートサイトです。
+輸入車販売のコーポレートサイトです。
 
 ## 開発環境
 
@@ -27,13 +27,13 @@
 ### ① リポジトリをクローン
 
 ```bash
-git clone https://github.com/ユーザー名/diving.git
+git clone https://github.com/ユーザー名/imported-car.git
 ```
 
 ### ② プロジェクトへ移動
 
 ```bash
-cd diving
+cd imported-car
 ```
 
 ### ③ パッケージをインストール
@@ -125,3 +125,4 @@ dist/
 | npm run build | 本番ファイル作成 |
 | npm run preview | ビルド結果を確認 |
 
+# imported_car
