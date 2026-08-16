@@ -1,71 +1,62 @@
 @use "../global/" as *;
 
-$drawer-width: 40px;
-$drawer-height: 2px;
-$drawer-color: $white;
-$drawer-width-md: 40px;
+$drawer-width: 25px;
+$drawer-height: 1px;
+$drawer-color: $border;
+$drawer-width-third: 15px;
+$drawer-color-on: $white;
 
 .hamberger {
   transition: 0.5s ease;
   width: 100%;
   height: inherit;
+  cursor: pointer;
+  position: relative;
+  z-index: 2002;
 }
-
 .header__menu-btn.hamberger {
   display: block;
-
 }
-
 .hamberger .menu__button {
   position: absolute;
-  right: 0.65rem;
+  left: 0;
   display: block;
   z-index: 1001;
-  // margin: 0.75rem auto 0;
   height: $drawer-height;
   width: $drawer-width;
-  background-color: $white;
+  background-color: $drawer-color;
   border-radius: 999px;
-  transform: scaleY(0.5);
+  transform-origin: left center;
   transition: ease-in-out 0.5s;
-  @include mq("md") {
-    right: 1.125rem;
-  }
 }
+
 .menu__button:first-child{
-  top: 0.375rem;
+  top: 0rem;
 }
-
 .hamberger .menu__button:nth-child(2) {
-  // top: 12px;
+  top: 0.75rem;
+}
+
+.menu__button.menu__button:nth-child(3) {
+  top: 1.5rem;
+  width: $drawer-width-third;
+}
+.hamberger.active span:nth-of-type(1){
+  -webkit-transform: rotate(-45deg) ;
+  transform: rotate(-45deg);
   top: 1.125rem;
-}
-
-.hamberger .menu__button:nth-child(3) {
-  top: 1.875rem;
-}
-.header__menu-btn.active span:nth-of-type(1){
-  -webkit-transform: translateY(10px) rotate(38deg) scaleY(.4);
-  transform: translateY(10px) rotate(38deg) scaleY(.4);
-  top: 0.5rem;
-  @include mq("md") {
-  -webkit-transform: translateY(10px) rotate(38deg) scaleY(.7);
-  transform: translateY(10px) rotate(38deg) scaleY(.7);
-    top: 0;
-  }
+  background-color: $drawer-color-on;
 
 }
-.header__menu-btn.active span:nth-of-type(2){
+.hamberger.active  span:nth-of-type(2){
   opacity: 0;
 }
-.header__menu-btn.active span:nth-of-type(3){
-  -webkit-transform: translateY(-10px) rotate(-38deg) scaleY(.4);
-  transform: translateY(-10px) rotate(-38deg) scaleY(.4);
-  top: 28px;
-  @include mq("md") {
-  -webkit-transform: translateY(-10px) rotate(-40deg) scaleY(.7);
-  transform: translateY(-10px) rotate(-40deg) scaleY(.7);
-  top: 20px;
-  }
+.hamberger.active span:nth-of-type(3){
+  -webkit-transform: rotate(45deg) ;
+  transform: rotate(45deg) ;
+  width: $drawer-width;
+  top: 0rem;
+  background-color: $drawer-color-on;
+
 }
 

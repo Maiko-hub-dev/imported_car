@@ -1,0 +1,116 @@
+@use "../global/" as *;
+
+.service__inner{
+    margin-top: 5rem;
+}
+.service__title{
+    font-family: $eng-fonts;
+    color: $black;
+    text-transform: capitalize;
+    font-size: 2.375rem;
+    line-height: 1.47;
+    font-weight: $bold;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    transition: 0.8s ease;
+    @include mq("md") {
+        font-size: 4.375rem;
+        line-height: 1.4875;
+    }
+}
+.service__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.25rem auto 0;
+    @include mq("md") {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(min(100%,355px), 1fr));
+        margin: 2.5rem auto;
+        padding: 0;
+        align-items: flex-start;
+        gap: 1.125rem;
+        justify-content: center;
+        padding: 4.5rem 0.9375rem 0 ;
+    }
+}
+.service__card{
+    background-color: $white;
+    width: 100%;
+    transition: animation 0.5s ease;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    @include mq("md") {
+        flex-direction: column;
+        max-width: 355px;
+    }
+
+}
+.service__card-images{
+    position: relative;
+}
+.service__card-images::before{
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 50.7%;
+    @include mq("md") {
+        padding-top: 47.8%;
+    }
+}
+.service__card-images img{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    aspect-ratio: 335 /170;
+    @include mq("md") {
+        aspect-ratio: 355 /170;
+    }
+}
+.service__card-images .service__sections{
+    position: absolute;
+    display: flex;
+    top: 29%;
+    left: 1.875rem;
+    transform: translateY(-29%);
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+.service__next-title{
+    color: $white;
+    font-size: 1.625rem;
+    font-family: $base-font-family;
+    font-weight: $bold;
+    margin-top: 0.625rem;
+}
+.service__eng-title{
+    font-family: $eng-fonts;
+    text-transform: capitalize;
+    color: $white;
+    font-weight: $bold;
+    font-size: 1rem;
+}
+.service__card--txt{
+    font-family: $base-font-family;
+    line-height: 2;
+    font-size: 0.875rem;
+    font-weight: $regular;
+    margin: 1.25rem 0;
+}
+.service__card--contents{
+    position: relative;
+}
+.service__title.js-title {
+  transform: translateX(50%);
+  opacity: 0;
+  transition: transform 1s ease-in ,opacity 1s ease-in;
+  &.is-active {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}

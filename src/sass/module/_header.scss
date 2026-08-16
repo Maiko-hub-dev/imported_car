@@ -2,98 +2,78 @@
 
 .header {
   width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: 2.8s ease;
+  transition: 0.8s ease;
+  position: relative;
+  z-index: 100;
 }
 .header__inner{
   height: 5rem;
-  @include mq("md") {
-    height: 5.625rem;
-  }
-}
-body.is-loaded .header{
-  height: 5rem;
-  position: fixed;
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  top: -1.25rem;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  padding: 1.3125rem 0.9375rem;
-  transform: translateY(20px);
-  background-color: rgba($skelton, 0.68);
-  visibility: visible;
-  opacity: 1;
-   @include mq("md") {
-    height: 5.625em;
-    top: 0;
-    padding: 0 2.5rem;
-    transform: translateY(0);
-    justify-content: flex-start;
-  }
-}
-body.is-loaded .header__inner{
-  height: 5rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2002;
   @include mq("md") {
     height: 5.625rem;
   }
-}
-.header:has(.js-drawer.active) {
-  background-color: $green;
 }
 .header.js-header{
   transition: background-color 0.3s ease;
 }
-
-.header__skelto {
-  display: block;
-  height: 5rem;
-  @include mq("md") {
-    height: inherit;
-    padding: 1.25rem 0 0.5rem 0;
-  }
-}
 .header__link{
-  display: block;
-  width: 6.375rem;
-  padding-top: 1.25rem;
+  display: inline-block;
+  width: 7.125rem;
   height: inherit;
+  position: relative;
+  opacity: 1;
+  z-index: 900;
   @include mq("md") {
-    padding-top: 0;
-    width: 8.3125rem;
+    width: clamp(11.5rem, 8vw,16.125rem);
   }
 }
+
+.header__link img{
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+}
+.header-logo{
+  display: inline-block;
+  width: 7.125rem;
+  height: inherit;
+  position: relative;
+  z-index: 2002;
+}
+
 .header__nav {
   display: none;
-    &.is-active {
+  @include mq("md") {
+    position: fixed;
+    right: 0;
+    width: clamp(40.75rem,70%,42.75rem);
     display: flex;
-    height: inherit;
     align-items: center;
-    justify-content: space-between;
-    max-width: 859px;
-    width: 100%;
-    margin-left: auto;
-    padding: 0 0 0 0.75rem;
+    justify-content: flex-end;
   }
 }
 .header__btns {
-  position: fixed;
   display: flex;
-  right: 0;
   align-items: center;
   justify-content: center;
   width: 3.5rem;
+  top: 0.5rem;
   height: 3rem;
-  padding: 0.4375rem 0;
-  z-index: 9999;
+  margin-left: auto;
   margin-top: 0.5rem;
+  z-index: 9999;
+  margin-top: 1rem;
+  position: relative;
+  @include mq("md") {
+    display: none;
+  }
 }
-
-
-
 .header__navigation{
   display: none;
   @include mq("md"){
@@ -103,41 +83,29 @@ body.is-loaded .header__inner{
       padding: 0;
   }
 }
-.header__navigation:first-child{
+.header__navigation:not(:first-child){
     @include mq("md"){
-        margin-left: 1.25rem;
+        margin-left: clamp(2rem, 4%,3.125rem);
     }
-}
-.header__navigation.header__navigation-link2{
-  @include mq("md") {
-    margin-left: clamp(2.5rem, 2vw, 3rem);
-  }
-}
-.header__navigation.header__navigation-link3{
-  @include mq("md") {
-    margin-left: clamp(2.75rem, 2vw, 3rem);
-  }
-}
-.header__navigation.header__navigation-link4{
-  @include mq("md") {
-    margin-left: clamp(3.5rem, 2vw, 3.75rem);
-  }
-}
-.header__navigation.header__navigation-link5{
-  @include mq("md") {
-    margin-left: clamp(2.5rem, 2vw, 3rem);
-  }
 }
 .header__navigation-link {
   display: none;
   @include mq("md"){
     position: relative;
+    font-family: $header-font;
     text-decoration: none;
+    text-transform:uppercase;
     height: 5rem;
     max-width: 5.5rem;
     display: flex;
     flex-direction: column;
-    padding: 1rem 0 0 0;
+    padding: 1.90625rem 0 ;
+    font-weight: $bold;
+  }
+}
+.header__navigation-link.header__navi--contact{
+  @include mq("md") {
+     max-width: 11.75rem;
   }
 }
 .header__navigation a::after{
@@ -148,56 +116,57 @@ body.is-loaded .header__inner{
     content: '';
     width: 100%;
     height: 1px;
-    background: $white;
+    background: $border;
     bottom: 0.875rem;
     transform: scale(0, 1);
     transform-origin: center top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
     transition: transform 0.3s;   /*変形の時間*/
   }
-
 }
-
+.header__navigation.header__navigate--contact{
+  background-color: $main-blue;
+  color: $white;
+  @include mq("md") {
+    max-width: 11.75rem;
+  }
+}
+.header__navigate--contact a::after{
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform-origin: center top;
+    transform: translateX(-50%) scale(0,1);
+    content: '';
+    width: 50%;
+    height: 1px;
+    transition: transform 0.3s;  
+  @include mq("md") {
+    background: $white;
+  }
+}
 .header__navigation a:hover::after {
   @include mq("md") {
     transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
   }
 }
-
+.header__navigate--contact a:hover::after{
+  @include mq("md") {
+    transform: translateX(-50%) scale(1,1);
+  }
+}
 
 .navigation__eng{
-  display: none;
-  @include mq("md") {
-    color: $white;
+    color: $black;
     display: inline-block;
     text-align: center;
-    font-family: $eng-fonts;
-    text-transform: capitalize;
+    font-family: $header-font;
+    text-transform: uppercase;
     font-size: 1.125rem;
-    font-weight: $regular;
   }
-}
-.navigation__japan{
-  display: none;
-  @include mq("md") {
-    color: $white;
-    display: block;
-    font-family: $base-font-family;
-    font-size: 0.625rem;
-    line-height: 1;
-    text-align: center;
-    padding: 0.25em 0 0;
-  }
-}
-.navigation__japan.navigation__japan--info{
-  display: none;
-  @include mq("md") {
-    color: $white;
-    display: block;
-    font-family: $base-font-family;
-    font-size: 0.625rem;
-    line-height: 1;
-    text-align: right;
-  }
+.navigation__eng.navigation-contact{
+  color: $white;
+  display: block;
+  padding: 0rem 2.5625rem;
 }
 .navigation__txt{
   display: none;

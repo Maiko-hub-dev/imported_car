@@ -1,0 +1,116 @@
+@use "../global/" as *;
+
+.bottoms{
+    position: relative;
+}
+.bottoms__inner{
+    background-color: $back-blue;
+    color: $white;
+}
+.bottoms__wrapper{
+    padding: 3.75rem 2.1875rem 1.875rem;
+    @include mq("md") {
+        padding: 3.9375rem 0;
+    }
+}
+.bottoms__container{
+    display: flex;
+    flex-direction: column-reverse;
+    @include mq("md") {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.bottoms__contact--title{
+    font-size: 0.875rem;
+    @include mq("md") {
+        font-size: 1.125rem;
+    }
+}
+.bottoms__titles{
+    display: flex;
+    flex-direction: column;
+    @include mq("md") {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+.bottoms__title{
+    width: 7.125rem;
+    padding: 0 2.875rem;
+    @include mq("md") {
+        padding: 0;
+        width: 16.125rem;
+        align-items: center;
+    }
+}
+.bottoms__title img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    min-width: 114px;
+    @include mq("md") {
+        min-width: 258px;
+    }
+}
+.bottoms__sns{
+    display: flex;
+     padding: 0 2.875rem;
+    @include mq("md") {
+        margin-left: 2.875rem;
+        padding: 0;
+        flex-direction: row;
+    }
+}
+.bottoms__parts{
+    display: inline-block;
+    @include mq("md") {
+        
+    }
+}
+.fa-facebook.bottoms__parts,
+.fa-twitter.bottoms__parts,
+.fa-instagram.bottoms__parts{
+    width: 1.375rem;
+}
+.fa-twitter.bottoms__parts,
+.fa-instagram.bottoms__parts{
+    margin-left: 1.25rem;
+}
+.bottoms__navigations{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 2.875rem;
+    margin-bottom: 3.875rem;
+    @include mq("md") {
+        margin-bottom: 0;
+    }
+}
+.bottoms__copyrights{
+    font-family: $footer-font;
+    font-weight: $regular;
+    font-size: 0.75rem;
+    color: $white;
+    padding: 0 2.875rem;
+    margin-top: 2.5rem;
+    @include mq("md") {
+        padding: 0;
+        margin-top: 1.25rem;
+    }
+}
+.bottoms__link{
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: $regular;
+    font-family: $footer-font;
+    @include mq("md") {
+        font-size: 1rem;
+    }
+}
+.bottoms__nav:not(:first-child){
+    margin-top: 1.5rem;
+}

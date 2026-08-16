@@ -7,78 +7,36 @@
 }
 .swiper {
     overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 .swiper-slide img {
   display: block;
   object-fit: cover;
 }
 
-.swiper2 {
-  width: 100%;
-  position: relative;
-  // overflow: hidden;
-  overflow: hidden !important;
-}
-
-.swiper2 .swiper-wrapper {
+.swiper .swiper-wrapper {
   transition-timing-function: linear;
   display: flex;
   align-items: stretch;
   height: 100%;
   box-sizing: border-box;
   margin-bottom: 1rem;
- 
-}
-.swiper2 .swiper-slide {
-  width: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: inherit;   //. ←ここを直しました
-  // flex: 0 0 auto;   
-    @include mq("md"){
-    min-width: 333px;
-  }
-}
-.swiper-slide.campaign__swiper-slide{
-    overflow: visible; // はみ出しを許可
-  @include mq("md") {
-    height: 445px;
-  }
-}
-.swiper2 .swiper-slide img {
-    // align-self: center; /* 上下の中央揃え */
-    max-height: 188px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    @include mq("md") {
-      aspect-ratio: 333/ 223;
-      min-height: 223px;
-      max-width: 333px;
-    }
 }
 
-.swiper2 .swiper-slide .slide__block {
-  width: 100%;
-  max-width: 333px;
-  box-sizing: border-box;
-  overflow: visible; 
-  height: 178px; // 画像分を引くなど
+.view__wrapper .swiper-slide{
+  position: relative;
+}
+.view__wrapper .swiper-slide::before{
+  display: block;
+  content: "";
+  padding-top: 177.86%;
   @include mq("md") {
-    height: 222px; // 画像分を引くなど
+    padding-top: 62.5%;
   }
 }
-.slide__block--titles{
-  min-height: 3.875rem;
-  border-bottom: 1px solid $green;
-  padding-bottom: 0.35rem;
-  @include mq("md") {
-    padding-bottom: 0.5rem;
-  }
+.view__wrapper .swiper-slide img{
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.swiper2 .slide__block {
-  width: 333px;
-}
-
-

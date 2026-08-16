@@ -1,0 +1,105 @@
+@use "../global/" as *;
+
+.informed{
+    position: relative;
+    margin-top: 10rem;
+    opacity: 0;
+}
+.informed__wrapper{
+    background-color: $main-blue;
+    color: $white;
+    font-family: $base-font-family;
+}
+.informed__container{
+    display: flex;
+    flex-direction: column-reverse;
+    @include mq("md") {
+        flex-direction: row;
+    }
+}
+.informed__contact--title{
+    font-size: 0.875rem;
+    @include mq("md") {
+        font-size: 1.125rem;
+    }
+}
+.informed-box{
+    border: 1px solid $white;
+    border-radius: 0.25rem;
+    padding: 1.25rem 3.3125rem;
+    max-width: 275px;
+    margin: 0 auto;
+    color: $white;
+    transition: 0.3s ease;
+}
+.informed-box:hover{
+    background-color: $white;
+    color: $main-blue;
+}
+.informed-box.informed__contact--button{
+    margin-top: 2.03125rem;
+    @include mq("md") {
+        margin-top: 1.5975rem;
+    }
+}
+.informed-box.informed__contact--telephone{
+    margin-top: 1.28125rem;
+}
+.informed__image{
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+    aspect-ratio: 665 / 375;
+    @include mq("md") {
+        aspect-ratio: 820 /446;
+        width: 50%;
+    }
+}
+.informed__image::before{
+    content: "";
+    display: block;
+    padding-top: 54.39%;
+}
+.informed__image img{
+    display: block;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.informed__contact{
+    padding: 5rem;
+    @include mq("md") {
+        max-width: 275px;
+        margin: 0 auto;
+        padding: 5rem 0;
+    }
+}
+.informed__text{
+    padding-top: 0.625rem;
+    font-size: 0.75rem;
+    text-align: center;
+    @include mq("md") {
+        font-size: 0.875rem;
+    }
+}
+
+.informed-icon.fa-envelope{
+    width: 1rem;
+    display: inline-block;
+}
+.informed-icon.fa-phone{
+    width: 1rem;
+    display: inline-block;
+}
+.informed-box:hover .informed-icon{
+    background-color: $main-blue;
+}
+.informed-txt{
+    font-size: 1rem;
+    @include mq("md") {
+        font-size: 1.375rem;
+    }
+}

@@ -1,4 +1,4 @@
-@use "../global" as *;
+@use "../global/" as *;
 
 @if $startFrom == sp {
   .inner {
@@ -12,30 +12,18 @@
       padding-right: $padding-pc;
       padding-left: $padding-pc;
     }
-    &.footer__inner {
-    max-width: 1100px;
-    padding-right: $padding-sp;
-    padding-left: $padding-sp;
-  }
-    .inner--footer{
-      padding-inline: 0.875rem;
-      max-width: 375px;
-    }
-    .inner--about,
-    .inner--information,
-    .inner--top-blog,
-    .inner--campaign,
-    .inner--contact,
-    .inner--voice,
-    .inner--price,
     .inner--blog{
       max-width: 600px;
     }
     .inner--blog{
       padding-inline: 1.3125rem;
     }
-  
   }
+    .inner--about,
+    .inner--service{
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
 } @else {
   .inner {
     max-width: $inner + strip-unit($padding-pc) * 2;

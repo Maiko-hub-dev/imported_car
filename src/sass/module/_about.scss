@@ -1,0 +1,123 @@
+@use "../global/" as *;
+
+.about__inner{
+  position: relative;
+}
+.about__wrapper{
+  display: flex;
+  flex-direction: column;
+  container-type: inline-size;
+}
+.about__contents{
+  padding: 1.875rem 0 0 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.25rem;
+  @include mq("md") {
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1100px;
+    margin: 3.75rem auto 0;
+  }
+}
+.about__content{
+  padding: 1.875rem 0 0 0;
+  position: relative;
+  @include mq("md") {
+    aspect-ratio: 550 / 490;
+    padding: clamp(1.5rem, 2vh, 4.375rem) 0 0 auto;
+    flex: 1;
+    max-width: 490px;
+    margin-left: clamp(2rem, 3vw, 3.75rem);
+  }
+}
+.about__title{
+    color: $main-blue;
+    font-family: $base-font-family;
+    font-size: 5.25rem;
+    font-weight: $bold;
+    display: flex;
+    line-height: 1.45;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    @include mq("md") {
+      font-size: 9.375rem;
+    }
+}
+.about__title span{
+    display: inline-block;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 0 1rem;
+}
+.about__title span:nth-child(odd) {
+  animation: loop 40s linear -20s infinite;
+}
+.about__title span:nth-child(even) {
+  animation: loop2 40s linear infinite;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+.about__content-image{
+  width: 100%;
+  aspect-ratio: 335 /292;
+    @include mq("md") {
+        width: 50%;
+        aspect-ratio: 550 / 490;
+    }
+}
+.about__subtitle{
+  font-family: $eng-fonts;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: $bold;
+}
+.about__description{
+  font-family: $base-font-family;
+  font-weight: $regular;
+  color: $black;
+  line-height: 2.285;
+  font-size: 0.875rem;
+  padding: 1.875rem 0 0 0;
+  @include mq("md") {
+    font-size: 1rem;
+    margin-top: clamp(2rem, 2.5vw,2.5rem);
+    padding: 0;
+    line-height: 2.375;
+    letter-spacing: normal;
+    aspect-ratio: 490 / 190;
+  }
+}
+.about__readmore.common-link-btn{
+  position: relative;
+  left: 100%;
+  margin-top: 2.5rem;
+  transform: translateX(-18%);
+  @include mq("md") {
+    content: "";
+    margin-top: clamp(1rem, 2vw, 2.5rem);
+    margin-left: auto;
+  }
+}
+.about__btn{
+  position: relative;
+}
