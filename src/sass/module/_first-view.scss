@@ -57,13 +57,15 @@
 .view__wrapper{
     height: inherit;
 }
+
 .view__title{
     color: $black;
     z-index: 2;
     max-width: 248px;
     @include mq("md") {
         padding-top: 0;
-        max-width: 496px;
+        max-width: none;
+        height: 100%;
     }
 }
 .imported-title.view__title{
@@ -71,9 +73,15 @@
     margin-top: 1.25rem;
     @include mq("md") {
          writing-mode: vertical-rl;
-         margin-left: auto;
-         padding: 0 5rem;
+         width: 19.22%;
          position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100%;
+         
+         padding: 0;
+         margin: 0;
     }
 }
 .imported-title__main{
@@ -82,11 +90,20 @@
     line-height: 1.44;
     @include mq("md") {
         position: absolute;
+        height: 57.4%;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         font-size: 3.75rem;
-        line-height: 1.2;
+        padding: 0 ;
+        line-height: 1;
         font-weight: $bold;
         letter-spacing: 0.025em;
+    }
+}
+.view__space{
+    display: block;
+    @include mq("md") {
+        width: 1.5625rem;
     }
 }

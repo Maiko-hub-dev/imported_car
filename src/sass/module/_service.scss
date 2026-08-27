@@ -42,6 +42,7 @@
     max-width: 600px;
     display: flex;
     flex-direction: column;
+    padding-bottom: 3.125rem;
     @include mq("md") {
         flex-direction: column;
         max-width: 355px;
@@ -108,7 +109,7 @@
 .service__title.js-title {
   transform: translateX(50%);
   opacity: 0;
-  transition: transform 1s ease-in ,opacity 1s ease-in;
+  transition: transform 1s ease-out ,opacity 1s ease-out;
   &.is-active {
     opacity: 1;
     transform: translateX(0%);

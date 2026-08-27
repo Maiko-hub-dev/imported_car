@@ -1,81 +1,63 @@
 @use "../global/" as *;
 
-.sp-nav{
-    position: fixed;
-    top: 0rem;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: $back-blue;
-    overflow-y: scroll;
-    z-index: 2001;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease;
-    @include mq("md") {
+.sp-nav {
+  position: fixed;
+  top: 0rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $back-blue;
+  overflow-y: scroll;
+  z-index: 2001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  @include mq("md") {
     margin-top: 1.5rem;
-        
-    }
+  }
 }
 .sp-nav.active {
-    opacity: 1;
-    visibility: visible;
-    // top: 4rem;
+  opacity: 1;
+  visibility: visible;
+  // top: 4rem;
 }
 
-.sp-nav__drawer{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100dvh;
+.sp-nav__drawers {
+  width: 7.125rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.drawer__item,
-.drawer__item a,
-.drawer__link,
-.drawer__link-mail{
+.sp-nav__drawer {
+  width: 73.333%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sp-nav__drawes a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.drawer__link {
   max-width: 100%;
   box-sizing: border-box;
   display: block;
+  font-family: $header-font;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: $white;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid $main-blue;
 }
-.header__drawer-content{
-    padding: 1rem 0.9375rem;
-    height: 100dvh;
-    @include mq("md") {
-    padding: 1.5rem 0.9375rem;
-    }
+.drawer__link:first-child {
+  border-top: 1px solid $main-blue;
 }
-
-.drawer__items{
-    padding: 0;
-    display: block;
-    color: $white;
-    width: 100%;
+.drawer__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.drawer-content{
-    color: $white;
-    width: 50%;
-    height: 100%;
-}
-.drawer__logo{
-    display: block;
-    width: 1.125rem;
-    height: 1.125rem;
-
-}
-
-.drawer__link-main.drawer__link-main-txt{
-    @include mq("md") {
-    margin-left: 0.75rem;
-    }
-}
-.drawer__link-content{
-    font-family: $base-font-family;
-    font-size: 1rem;
-    @include mq("md") {
-    margin-left: 0.25rem;
-    }
-}
-
-
-

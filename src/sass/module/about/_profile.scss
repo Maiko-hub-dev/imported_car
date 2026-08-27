@@ -1,0 +1,111 @@
+@use "../../global/" as *;
+
+.profile{
+    margin-top: 1.25rem;
+    background-color: $gray;
+    padding: 3.75rem 0 5rem;
+    @include mq("md") {
+        padding: 4.375rem 0 7.5rem;
+    }
+}
+.profile__inner.inner{
+    @include mq("md") {
+        max-width: 1100px;
+    }
+}
+.profile__composition {
+  position: relative;
+  margin-top: 0.625rem;
+  width: 100%;
+  @include mq("md") {
+    margin-top: 5.125rem;
+    padding: 0;
+
+  }
+}
+.profile__company {
+  padding: 0;
+  font-size: 0.875rem;
+  @include mq("md") {
+    font-size: 1rem;
+  }
+}
+.profile__company ul{
+  padding: 1.25rem 0;
+  border-bottom: 1px solid $border-card;
+  @include mq("md") {
+    padding: 2.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+.profile__company li{
+  font-family: $base-font-family;
+  line-height: 1.4285714286;
+  color: $black;
+  @include mq("md") {
+    display: inline-block;
+    line-height: 1;
+  }
+}
+.profile__company li:first-child{
+  font-weight: $medium;
+  @include mq("md") {
+    min-width: 5rem;
+    width: 16.5%;
+  }
+}
+.profile__company li:not(:first-child){
+  margin-top: 1rem;
+  font-weight: $regular;
+  @include mq("md") {
+    width: 84.5%;
+    margin-top: 0;
+  }
+}
+
+
+
+.company__contents {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid $border-card;
+  @include mq("md") {
+    display: flex;
+    padding: 2.5rem 0;
+    justify-content: flex-start;
+  }
+}
+.company__contents p{
+  font-family: $base-font-family;
+  font-weight: $medium;
+  min-width: 5rem;
+  @include mq("md") {
+    width: 16.5%;
+  }
+}
+.company__content{
+  margin-top: 1rem;
+  @include mq("md") {
+    margin-top: 0;
+    width: 84.5%;
+  }
+}
+.company__content span{
+  display: block;
+  font-family: $base-font-family;
+  font-size: 0.875rem;
+  font-weight: $regular;
+  @include mq("md") {
+    width: 100%;
+    display: inline-block;
+    font-size: 1rem;
+    display: block;
+  }
+}
+.company__content span:not(:first-child){
+  margin-top: 0.625rem;
+  @include mq("md") {
+    margin-top: 1.25rem;
+  }
+}

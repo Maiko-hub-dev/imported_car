@@ -1,0 +1,72 @@
+@use "../global/" as *;
+
+.under__title h2{
+    font-family: $base-font-family;
+    font-size: 0.75rem;
+    color: $font;
+    line-height: 1.4166666667;
+    @include mq("md") {
+        font-size: 1rem;
+        line-height: 1.4375;
+    }
+}
+.under__title h3{
+    font-family: $eng-fonts;
+    font-size: 1.625rem;
+    color: $black;
+    line-height: 1.5;
+    text-transform: capitalize;
+    letter-spacing: 0.0045em;
+    font-weight: $bold;
+    position: relative;
+    @include mq("md") {
+        font-size: 2.5rem;
+        line-height: 1.475;
+        letter-spacing: 0.015em;
+    }
+}
+.under__title h3::after{
+    // position: absolute;
+    content: "";
+    display: inline-block;
+    width: 3.75rem;
+    height: 2px;
+    background-color: $black;
+    margin-left: 0.625rem;
+    margin-top: 1rem;
+    vertical-align: top;
+    @include mq("md") {
+        margin-left: 1.25rem;
+        margin-top: 1.5rem;
+    }
+}
+.under__title p{
+    color: $black;
+    font-size: 0.875rem;
+    font-family: $base-font-family;
+    line-height: 2.2857142857;
+    letter-spacing: -0.0005em;
+    font-weight: $regular;
+    margin-top: 1.875rem;
+    @include mq("md") {
+        font-size: 1rem;
+        line-height: 2.375;
+        letter-spacing: normal;
+    }
+}
+.under__title span{
+    display: inline-block;
+    width: 100%;
+    color: $black;
+    font-size: 0.875rem;
+    font-family: $base-font-family;
+    line-height: 2.2857142857;
+    letter-spacing: -0.0005em;
+    font-weight: $regular;
+    margin-top: 1.875rem;
+    text-align: right;
+    @include mq("md") {
+        font-size: 1rem;
+        margin-top: 2.5rem;
+    }
+}

@@ -1,0 +1,217 @@
+@use "../global/" as *;
+
+.news{
+    padding-top: 5rem;
+    background-color: $gray;
+    @include mq("md") {
+        padding-bottom: 7.5rem;
+    }
+}
+
+.news__wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    @include mq("md") {
+        flex-direction: row;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        align-items: flex-start;
+    }
+}
+.news__titles{
+    position: relative;
+    width: 53.22%;
+    @include mq("md") {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1100px;
+    }
+}
+.news__title{
+    font-family: $eng-fonts;
+    font-size: 2rem;
+    line-height: 1.25;
+    color: $black;
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+       // 左から
+    &.js-title {
+        transform: translateX(-150px);
+    }
+    @include mq("md") {
+        font-size: 4.375rem;
+        color: $black;
+        padding-left: 0;
+        padding-right: 0.5rem;
+    }
+}
+.news__title.js-title {
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: transform 1s ease-out ,opacity 1s ease-out;
+
+  &.is-active {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+.news__info-contents{
+    padding: 0 1.25rem;
+    @include mq("md") {
+        padding: 0;
+    }
+}
+.news__info-content{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 132px));
+    justify-content: flex-start;
+    gap: 1rem;
+    row-gap: 0.9375rem;
+    border-bottom: 1px solid $border-card;
+    padding-bottom: 2.5rem;
+    @include mq("md") {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        border-bottom: none;
+        padding-right: 5rem;
+    }
+}
+.news__info-content.news__contents{
+    font-size: 0.75rem;
+    font-family: $base-font-family;
+}
+.news__content{
+    display: block;
+}
+.news__content.content-title {
+  list-style: none;
+  position: relative;
+  padding-left: 1rem;
+  color: $black;
+  font-weight: $medium;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $font;
+  }
+}
+.news__content:not(:first-child){
+    color: $time;
+}
+// ニュース一覧
+.news__details{
+    padding: 0 1.25rem;
+    @include mq("md") {
+        width: 76%;
+        padding: 0 0 3.5rem 1.25rem;
+        border-left: 1px solid $border-card;
+    }
+}
+.news__inform{
+    @include mq("md") {
+        padding-left: 2.5rem;
+    }
+}
+.news__detail{
+    display: flex;
+    align-items: center;
+}
+.news__date{
+    display: inline-block;
+    font-size: 0.75rem;
+    color: $time;
+    font-family: $base-font-family;
+    margin-top: 1.25rem;
+}
+
+.news__labels{
+    @include mq("md") {
+        margin-left: 1.1825rem;
+    }
+}
+.news__label{
+    display: inline-block;
+    background-color: $white;
+    color: $tag;
+    font-family: $base-font-family;
+    font-weight: $medium;
+    padding: 0.3125rem 0.9375rem;
+    font-size: 0.625rem;
+    margin-left: 0.75rem;
+    margin-top: 1.25rem;
+    @include mq("md") {
+    padding: 0.25rem 1.125rem;
+    font-size: 0.6875rem;
+        
+    }
+}
+.news__item:first-child
+    .news__date{
+        @include mq("md") {
+            margin-top: 0;
+        }
+}
+.news__item
+    .news___labels{
+        @include mq("md") {
+            display: flex;
+        }
+    }
+.news__item:first-child
+    .news__label{
+        @include mq("md") {
+            padding: 0.25rem 1.125rem;
+            margin-top: 0;
+        }
+    }
+.news__labels {
+  .news__label:not(:first-child) {
+    margin-left: 0.375rem;
+    @include mq("md") {
+        margin-left: 1.25rem;
+    }
+  }
+}
+.news__text{
+    font-size: 0.875rem;
+    color: $black;
+    font-family: $base-font-family;
+    font-weight: $medium;
+    padding-top: 1.625rem;
+    padding-bottom: 1.25rem;
+    line-height: 1.642;
+    border-bottom: 1px solid $border-card;
+    @include mq("md") {
+        font-size: 1rem;
+        line-height: 1.4375;
+        padding-bottom: 1.875rem;
+    }
+}
+.news__btn-inner{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2.8125rem;
+    padding-right: 1.25rem;
+    @include mq("md") {
+        position: relative;
+        margin-top: 0;
+    }
+}
+.news__readmore{
+    @include mq("md") {
+        position: absolute;
+        top: -1rem;
+        right: 3rem;
+    }
+}

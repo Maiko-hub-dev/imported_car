@@ -1,0 +1,84 @@
+@use "../global/" as *;
+
+.nav-toolbar {
+    height: 1.125rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: static;
+    padding-top: 1.875rem;
+@include mq("md") {
+    margin-top: 2.5rem;
+    height: 1.125rem;
+    padding: 0 8.125rem;
+    }
+}
+/* PCナビ */
+.nav-menu {
+    display: flex;
+    @include mq("md") {
+        position: absolute;
+    }
+}
+
+.nav-menu li {
+    position: relative;
+    color: $main-blue;
+    display: inline-block;
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1rem;
+    position: relative;
+    padding: 0 0.375rem;
+    text-decoration: none;
+    @include mq("md") {
+        padding: 0.625rem;
+    }
+}
+.nav-menu li:first-child{
+    @include mq("md") {
+        margin-left: 0;
+    }
+}
+.nav-menu li:not(:first-child) {
+  margin-left: 2.5rem;
+  @include mq("md") {
+        margin-left: 7.5rem;
+    
+  }
+}
+.nav-menu li:hover, .nav-menu li.active {
+    color: $main-blue;
+}
+
+.nav-menu li a{
+    font-family: $base-font-family;
+    display: inline-block;
+    font-size: 0.75rem;
+    height: 100%;
+    font-weight: $regular;
+    @include mq("md") {
+        font-size: 1rem;
+    }
+}
+
+.nav-menu li::after {
+    content:"";
+    position:absolute;
+    left: 100%;
+    top: 28%;
+    width: .475rem;
+    height: .475rem;
+    margin: 0 0.375rem 0 0.375rem;
+    border-top: 1px solid $main-blue;
+    border-left: 1px solid $main-blue;
+    transform: translateX(-50%) rotate(225deg);
+    @include mq("md") {
+        top: 40%;
+        margin: 0 0.625rem;
+    }
+}
+

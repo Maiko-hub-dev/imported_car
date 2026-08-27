@@ -1,0 +1,45 @@
+@use "../global/" as *;
+
+.introduction {
+    position: relative;
+    margin-top: 3.75rem;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: calc(50% - 50vw);
+}
+.introduction__inner{
+    max-width: 600px;
+    padding: 0 1.25rem;
+    margin: 0 auto;
+    @include mq("md") {
+        max-width: 840px;
+    }
+}
+.introduction h2{
+    font-size: 1.125rem;
+    font-family: $base-font-family;
+    font-weight: $medium;
+    color: $black;
+    line-height: 2.055;
+    letter-spacing: 0.037em;
+    @include mq("md") {
+        font-weight: $normal;
+        font-size: 2.5rem;
+        letter-spacing: 0.06em;
+        line-height: 1.75;
+    }
+}
+.introduction h3{
+    font-size: 0.875rem;
+    font-family: $base-font-family;
+    font-weight: $regular;
+    letter-spacing: 0.032em;
+    line-height: 2.28;
+    margin-top: 2.875rem;
+    @include mq("md") {
+        font-size: 1rem;
+        margin-top: 2.5rem;
+        line-height: 2.375;
+    }
+}

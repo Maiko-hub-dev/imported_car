@@ -3,10 +3,10 @@
 .header {
   width: 100%;
   transition: 0.8s ease;
-  position: relative;
+  position: fixed;
   z-index: 100;
 }
-.header__inner{
+.header__inner {
   height: 5rem;
   width: 100%;
   display: flex;
@@ -18,10 +18,10 @@
     height: 5.625rem;
   }
 }
-.header.js-header{
+.header.js-header {
   transition: background-color 0.3s ease;
 }
-.header__link{
+.header__link {
   display: inline-block;
   width: 7.125rem;
   height: inherit;
@@ -29,22 +29,23 @@
   opacity: 1;
   z-index: 900;
   @include mq("md") {
-    width: clamp(11.5rem, 8vw,16.125rem);
+    width: clamp(11.5rem, 8vw, 16.125rem);
   }
 }
 
-.header__link img{
+.js-header__link {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.js-header__link.active {
+  opacity: 0;
+}
+
+.header__link img {
   display: block;
   width: 100%;
   height: auto;
   transition: 0.5s ease;
-}
-.header-logo{
-  display: inline-block;
-  width: 7.125rem;
-  height: inherit;
-  position: relative;
-  z-index: 2002;
 }
 
 .header__nav {
@@ -52,13 +53,13 @@
   @include mq("md") {
     position: fixed;
     right: 0;
-    width: clamp(40.75rem,70%,42.75rem);
+    width: clamp(40.75rem, 70%, 42.75rem);
     display: flex;
     align-items: center;
     justify-content: flex-end;
   }
 }
-.header__btns {
+.sp {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,72 +75,72 @@
     display: none;
   }
 }
-.header__navigation{
+.header__navigation {
   display: none;
-  @include mq("md"){
-      display: block;
-      height: 5rem;
-      white-space: nowrap;
-      padding: 0;
+  @include mq("md") {
+    display: block;
+    height: 5rem;
+    white-space: nowrap;
+    padding: 0;
   }
 }
-.header__navigation:not(:first-child){
-    @include mq("md"){
-        margin-left: clamp(2rem, 4%,3.125rem);
-    }
+.header__navigation:not(:first-child) {
+  @include mq("md") {
+    margin-left: clamp(2rem, 4%, 3.125rem);
+  }
 }
 .header__navigation-link {
   display: none;
-  @include mq("md"){
+  @include mq("md") {
     position: relative;
     font-family: $header-font;
     text-decoration: none;
-    text-transform:uppercase;
+    text-transform: uppercase;
     height: 5rem;
     max-width: 5.5rem;
     display: flex;
     flex-direction: column;
-    padding: 1.90625rem 0 ;
+    padding: 1.90625rem 0;
     font-weight: $bold;
   }
 }
-.header__navigation-link.header__navi--contact{
+.header__navigation-link.header__navi--contact {
   @include mq("md") {
-     max-width: 11.75rem;
+    max-width: 11.75rem;
   }
 }
-.header__navigation a::after{
+.header__navigation a::after {
   @include mq("md") {
     display: block;
     position: absolute;
     left: 0;
-    content: '';
+    content: "";
     width: 100%;
     height: 1px;
     background: $border;
     bottom: 0.875rem;
     transform: scale(0, 1);
     transform-origin: center top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
-    transition: transform 0.3s;   /*変形の時間*/
+    transition: transform 0.3s; /*変形の時間*/
   }
 }
-.header__navigation.header__navigate--contact{
+.header__navigation.header__navigate--contact {
   background-color: $main-blue;
   color: $white;
   @include mq("md") {
     max-width: 11.75rem;
   }
 }
-.header__navigate--contact a::after{
-    display: block;
-    position: absolute;
-    left: 50%;
-    transform-origin: center top;
-    transform: translateX(-50%) scale(0,1);
-    content: '';
-    width: 50%;
-    height: 1px;
-    transition: transform 0.3s;  
+.header__navigate--contact a::after {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform-origin: center top;
+  transform: translateX(-50%) scale(0, 1);
+  content: "";
+  width: 50%;
+  height: 1px;
+  transition: transform 0.3s;
   @include mq("md") {
     background: $white;
   }
@@ -149,26 +150,25 @@
     transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
   }
 }
-.header__navigate--contact a:hover::after{
+.header__navigate--contact a:hover::after {
   @include mq("md") {
-    transform: translateX(-50%) scale(1,1);
+    transform: translateX(-50%) scale(1, 1);
   }
 }
-
-.navigation__eng{
-    color: $black;
-    display: inline-block;
-    text-align: center;
-    font-family: $header-font;
-    text-transform: uppercase;
-    font-size: 1.125rem;
-  }
-.navigation__eng.navigation-contact{
+.navigation__eng {
+  color: $black;
+  display: inline-block;
+  text-align: center;
+  font-family: $header-font;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+}
+.navigation__eng.navigation-contact {
   color: $white;
   display: block;
   padding: 0rem 2.5625rem;
 }
-.navigation__txt{
+.navigation__txt {
   display: none;
   @include mq("md") {
     color: $white;
@@ -176,4 +176,17 @@
     font-family: $eng-fonts;
     font-weight: $regular;
   }
+}
+.header__sns {
+  margin-top: 3.125rem;
+  display: flex;
+  color: $white;
+  align-items: center;
+}
+.header__sns--icon {
+  width: 1.1875rem;
+  height: 1.1875rem;
+}
+.header__sns--icon:not(:first-child) {
+  margin-left: 1.25rem;
 }

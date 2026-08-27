@@ -126,3 +126,48 @@
   transform: rotate(-45deg);
   transform-origin: calc(90% + 1px) 50%;
 }
+//. title animation
+.js-title {
+    opacity: 0;
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease-out;
+
+    &.is-active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.js-title-delay {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+  &.is-active {
+    animation: titleDelay 1s ease-out forwards;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes titleDelay {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  65% {
+    opacity: 0.7;
+    transform: translateX(-22px);
+  }
+  95% {
+    opacity: 0.9;
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

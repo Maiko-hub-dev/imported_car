@@ -1,0 +1,36 @@
+@use "../../global/" as *;
+
+.main-fv.service--fv{
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    top: 5rem;
+    padding-top: 1.875rem;
+    @include mq("md") {
+    }
+}
+
+.main-fv__container.service--fv__container{
+    width: 100%;
+    height: inherit;
+    margin-top: 1.875rem;
+    @include mq("md") {
+        width: 88.19%;
+        max-width: 1270px;
+        margin: 0 0 0 auto;
+    }
+}
+.main-fv-title.service-title{
+    top: 1.875rem;
+    padding: 1.125rem 3.75rem 2.25rem 1.125rem;
+    background-color: $white;
+    transition: opacity 1.5s ease;
+    opacity: 0;
+    &.is-active {
+        opacity: 1;
+    }
+    @include mq("md") {
+        width: max(39.3%, 31.215rem);
+        padding: 1rem 13.125rem 2.9375rem 3.125rem;
+    }
+}

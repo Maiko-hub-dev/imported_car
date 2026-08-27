@@ -1,0 +1,52 @@
+@use "../../global/" as *;
+
+.access{
+    margin-top: 5rem;
+}
+.access__inner.inner{
+    padding-bottom: 2.5rem;
+    @include mq("md") {
+        max-width: 1100px;
+        padding-bottom: 5rem;
+    }
+}
+.access__address{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.25rem;
+    @include mq("md") {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+.access__address li{
+    font-size: 0.875rem;
+    color: $black;
+    font-family: $base-font-family;
+    display: inline-block;
+    font-weight: $regular;
+    @include mq("md") {
+        font-size: 1rem;
+    }
+}
+.access__address li:first-child{
+    margin-bottom: 0.25rem;
+    @include mq("md") {
+        margin-bottom: 0;
+        margin-right: 1.25rem;
+    }
+}
+
+.access__map{
+    margin: 1.25rem 0;
+    // aspect-ratio: 335 / 400;
+        margin: 3.75rem 0 2.5rem;
+    }
+.access__map iframe{
+    display: block;
+    width: 100%;
+    aspect-ratio: 335 / 400;
+    @include mq("md") {
+        aspect-ratio: 1100 / 400;
+    }
+}

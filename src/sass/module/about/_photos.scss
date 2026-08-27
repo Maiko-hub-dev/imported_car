@@ -1,0 +1,38 @@
+@use "../../global/" as *;
+
+
+/* スライダー全体 */
+.flowing__wrappper{
+//   display: flex; /* スライドのグループを横並び */
+  overflow: hidden; /* はみ出たスライドを隠す */
+}
+/* スライド3枚のグループ */
+.flowing-wrapper ul {
+  animation: scroll-left 20s infinite linear .5s both;
+  display: inline-flex; /* スライド3枚を横並び */
+  gap: 0.25rem;
+  @include mq("md") {
+    gap: 0.625rem; // PC：画像間 10px
+  }
+}
+/* スライド */
+.flowing-wrapper li {
+    flex-shrink: 0;
+    width: calc(100vw / 3); /* 3はスライドの枚数 */
+}
+/* スライドの画像 */
+.flowing-wrapper img {
+  display: block;
+  @include mq("md") {
+    width: 30rem;
+  }
+}
+/* CSSアニメーション */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

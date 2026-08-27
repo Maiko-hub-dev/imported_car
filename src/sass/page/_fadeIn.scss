@@ -1,0 +1,147 @@
+@use "../global/" as *;
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+    &.is-visible {
+    animation: fadeIn 1s ease-out forwards;
+  }
+}
+.fade-in.fade-in-delay{
+    &.is-visible {
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+}
+@keyframes fadeIn {
+  0%{
+        opacity: 0;
+        transform: translateY(0px);
+    }
+  40%{
+        opacity: 0.4;
+        transform: translateY(15px);
+    }
+  65%{
+        opacity: 0.5;
+        transform: translateY(30px);
+    }
+  90%{
+        opacity: 0.8;
+    }
+  98%{
+        opacity: 0.9;
+    }
+  100% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+}
+
+// 下から上へふわっと
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+
+  &.is-visible {
+    animation: fadeUp1s 1.5s ease-out forwards;
+    animation-delay: 0.6s;
+    animation-duration: 1.2s;
+  }
+}
+
+@keyframes fadeUp1s {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  40% {
+    opacity: 0.4;
+    transform: translateY(40px);
+  }
+
+  65% {
+    opacity: 0.7;
+    transform: translateY(20px);
+  }
+  75%{
+    opacity: 0.75;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-down {
+  opacity: 0;
+  transform: translateY(-50px);
+    &.is-visible {
+    animation: fadeDown 1s ease-out forwards;
+  }
+}
+
+@keyframes fadeDown {
+  0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+  40%{
+        opacity: 0.4;
+        transform: translateY(-35px);
+    }
+  65%{
+        opacity: 0.5;
+        transform: translateY(-20px);
+    }
+  90%{
+        opacity: 0.8;
+    }
+  98%{
+        opacity: 0.9;
+    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+// 下から上へふわっと
+.fade-up-img {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+  &.is-active {
+    animation: fadeUp800ms 1.2s ease-out forwards;
+    animation-duration: 1s;
+  }
+}
+
+@keyframes fadeUp800ms {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  40% {
+    opacity: 0.4;
+    transform: translateY(42px);
+  }
+
+  65% {
+    opacity: 0.7;
+    transform: translateY(22px);
+  }
+  75%{
+    opacity: 0.75;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
