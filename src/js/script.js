@@ -88,8 +88,8 @@ jQuery(function ($) {
 
       if (!container) return;
 
-      // main-fv-titleを表示
-      const titleArea = container.querySelector(".main-fv-title");
+      // main-fv__titleを表示
+      const titleArea = container.querySelector(".main-fv__title");
 
       if (titleArea) {
         titleArea.classList.add("is-active");
@@ -138,6 +138,30 @@ jQuery(function ($) {
     $(this).toggleClass("active");
     $(".sp-nav").toggleClass("active");
     $(".js-header__link").toggleClass("active");
+  });
+
+  //  テキストが15文字以上になった場合に「…（省略記号）」でカットされるCSS の実装
+  const elems = document.querySelectorAll(".js-breadcrumb__current");
+  elems.forEach((el) => {
+    const text = el.textContent;
+    if (text.length > 10) {
+      el.textContent = text.slice(0, 15) + "...";
+    }
+  });
+
+  // 30文字で改行し、46文字を超えた場合は「...」で省略
+  const worksNavElems = document.querySelectorAll(".js-works-nav__active--point");
+
+  worksNavElems.forEach((el) => {
+    const text = el.textContent.trim();
+
+    if (text.length > 46) {
+      // 30文字目で改行 → 46文字まで表示 → ...
+      el.innerHTML = text.slice(0, 30) + "<br>" + text.slice(30, 46) + "...";
+    } else if (text.length > 30) {
+      // 31〜46文字の場合は30文字目で改行
+      el.innerHTML = text.slice(0, 30) + "<br>" + text.slice(30);
+    }
   });
 
   //. ここまで

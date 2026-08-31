@@ -1,0 +1,47 @@
+@use "../global/" as *;
+
+.detail__bread {
+  position: relative;
+}
+.detail__bread--content {
+  position: absolute;
+  margin-top: 5rem;
+  right: 0;
+}
+.detail-breadclumbs {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.625rem 0.625rem 0;
+  @include mq("md") {
+    padding: 1.25rem 3.75rem;
+  }
+}
+.detail-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+}
+
+.detail-breadcrumb li {
+  display: flex;
+  align-items: center;
+  font-size: 0.625rem;
+  @include mq("md") {
+    font-size: 0.9375rem;
+  }
+}
+.detail-breadcrumb li a {
+  text-transform: capitalize;
+  color: $time;
+  font-weight: $regular;
+  font-family: $header-font;
+}
+.detail-breadcrumb li:not(:last-of-type)::after {
+  content: "";
+  display: block;
+  width: 1.25rem;
+  height: 1px;
+  margin: 0 0.625em; /* 記号の左右の余白 */
+  background-color: $time;
+}

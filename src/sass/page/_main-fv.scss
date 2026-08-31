@@ -1,123 +1,121 @@
 @use "../global/" as *;
 
-.main-fv{
-    position: relative;
-    // height: 100%;
-    @include mq("md") {
-        padding-top: 6.25rem;
-        min-height: calc(100vh + 6.25rem);
-    }
- }
+.main-fv {
+  position: relative;
+  // height: 100%;
+  @include mq("md") {
+    padding-top: 6.25rem;
+    min-height: calc(100vh + 6.25rem);
+  }
+}
 
-.main-fv__inner{
-    padding-left: 0.625rem;
-    position: relative;
-    @include mq("md") {
-        padding-left: 1.25rem;
-        position: static;
-    }
+.main-fv__inner {
+  padding-left: 0.625rem;
+  position: relative;
+  @include mq("md") {
+    padding-left: 1.25rem;
+    position: static;
+  }
 }
-.main-fv.about--fv{
-    height: 100%;
-    position: relative;
-    z-index: 1;
-    top: 5rem;
-    @include mq("md") {
-        padding-top: 6.25rem;
-    }
+.main-fv.about--fv {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  top: 5rem;
+  @include mq("md") {
+    padding-top: 6.25rem;
+  }
 }
-.main-fv.news--fv{
-   @include mq("md") {
+.main-fv.news__fv {
+  @include mq("md") {
     min-height: 100%;
-   }
-    
+    padding-top: 6.25rem;
+  }
 }
 .main-fv__inner.service--fv__inner,
 .main-fv__inner.about--fv__inner,
-.main-fv__inner.news--fv__inner{
+.main-fv__inner.news__fv__inner {
+  position: relative;
+  padding-top: 1.875rem;
+}
+.main-fv__inner.news__fv__inner {
+  @include mq("md") {
+    padding-top: 6.25rem;
+  }
+}
+.main-fv__container {
+  width: 100%;
+  height: inherit;
+  @include mq("md") {
     position: relative;
-    padding-top: 1.875rem;
+    width: 88.19%;
+    max-width: 1270px;
+    margin: 0 0 0 auto;
+  }
 }
-.main-fv__container{
-    width: 100%;
-    height: inherit;
-    @include mq("md") {
-        width: 88.19%;
-        max-width: 1270px;
-        margin: 0 0 0 auto;
-    }
+.main-fv__container picture {
+  height: inherit;
+
+  @include mq("md") {
+    aspect-ratio: 1270 / 514;
+  }
 }
-.main-fv__container picture{
-    height: inherit;
-    
-    @include mq("md") {
-        aspect-ratio: 1270 / 514;
-        height: auto;
-    }
+.main-fv__container img {
+  display: block;
+  height: inherit;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  @include mq("md") {
+    height: 100%;
+  }
 }
-.main-fv__container img{
-    display: block;
-    height: inherit;
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
+.main-fv__title {
+  position: absolute;
+  top: 0rem;
+  padding: 1.125rem 3.75rem 2.25rem 1.125rem;
+  background-color: $white;
+  transition: opacity 1.5s ease;
+  opacity: 0;
+  &.is-active {
+    opacity: 1;
+  }
+  @include mq("md") {
+    width: min(39.3%, 31.215rem);
+    padding: 1rem 13.125rem 2.9375rem 3.125rem;
+  }
 }
-.main-fv-title{
-    position: absolute;
-    top: 0rem;
-    padding: 1.125rem 3.75rem 2.25rem 1.125rem;
-    background-color: $white;
-    transition: opacity 1.5s ease;
-    opacity: 0;
-    &.is-active {
-        opacity: 1;
-    }
-    @include mq("md") {
-        width: max(39.3%, 31.215rem);
-        padding: 1rem 13.125rem 2.9375rem 3.125rem;
-    }
-}
-.main-fv-title.service-title,
-.main-fv-title.about-title{
-    &.is-active {
+.main-fv__title.service-title,
+.main-fv__title.about-title,
+.main-fv__title.news-title {
+  &.is-active {
     opacity: 1;
     top: 5%;
     transform: translateY(-10%);
     @include mq("md") {
-        top: 0;
-        transform: translate(-2%, 0);
+      top: 0;
+      transform: translate(-2%, 0);
     }
-    }
+  }
 }
-.main-fv-title.news-title{
-    &.is-active {
-    opacity: 1;
-    top: 20%;
-    left: 0;
-    transform: translateY(-5%);
-    @include mq("md") {
-        top: 0;
-        transform: translate(0%, 0);
-    }
-    }
+
+.main-fv__title h1 {
+  font-family: $eng-fonts;
+  text-transform: capitalize;
+  font-size: 2.75rem;
+  font-weight: $bold;
+  color: $black;
+  @include mq("md") {
+    font-size: clamp(5.5rem, 5vw, 6.25rem);
+    line-height: 1.48;
+  }
 }
-.main-fv-title h1{
-    font-family: $eng-fonts;
-    text-transform: capitalize;
-    font-size: 2.75rem;
-    font-weight: $bold;
-    color: $black;
-    @include mq("md") {
-        font-size: clamp(5.5rem,5vw,6.25rem);
-        line-height: 1.48;
-    }
-}
-.main-fv-title p{
-    font-family: $base-font-family;
-    font-size: 0.75rem;
-    font-weight: $bold;
-    @include mq("md") {
-        font-size: 1.25rem;
-        min-width: 140px;
-    }
+.main-fv__title p {
+  font-family: $base-font-family;
+  font-size: 0.75rem;
+  font-weight: $bold;
+  @include mq("md") {
+    font-size: 1.25rem;
+    min-width: 140px;
+  }
 }

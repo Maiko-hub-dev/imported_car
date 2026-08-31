@@ -1,0 +1,78 @@
+@use "../../global/" as *;
+
+.sidebar {
+  width: 100%;
+  margin-top: 3.5625rem;
+  @include mq("md") {
+    display: block;
+    width: 33.333%;
+    margin-top: 0;
+    padding: 8.5rem 0 0 3rem;
+  }
+}
+.sidebar__list {
+  @include mq("md") {
+    padding-top: 1.25rem;
+  }
+}
+.sidebar h2 {
+  font-family: $base-font-family;
+  font-size: 0.875rem;
+  line-height: 1.4285714286;
+  font-weight: $medium;
+  background-color: $back-blue;
+  padding: 0.9375rem 1.125rem;
+  color: $white;
+}
+.aside__article {
+  display: flex;
+  padding: 1.125rem;
+  border-bottom: 1px solid $news-under;
+}
+.aside__article img {
+  display: block;
+  aspect-ratio: 1;
+  width: 33.33%;
+  object-fit: cover;
+}
+
+.aside__article ul {
+  width: 59.349%;
+  margin-left: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.aside__article li {
+  display: block;
+  color: $article;
+  font-family: $base-font-family;
+  font-size: 0.75rem;
+  font-weight: $regular;
+  line-height: 2;
+  letter-spacing: 0.024em;
+}
+.aside__article li > time {
+  color: $time;
+  font-family: $base-font-family;
+  font-weight: $bold;
+  display: inline-block;
+  font-size: 0.625rem;
+}
+.sidebar h2:not(:first-child) {
+  margin-top: 2.5rem;
+}
+.sidebar > ul {
+  padding: 0 1.125rem;
+}
+.sidebar > ul > li {
+  display: block;
+  padding: 1.125rem 0;
+  font-family: $base-font-family;
+  font-size: 0.875rem;
+  color: $black;
+  border-bottom: 1px solid $news-under;
+}
+.sidebar > ul > li:last-child {
+  border-bottom: none;
+}

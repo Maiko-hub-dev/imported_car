@@ -1,0 +1,100 @@
+@use "../global/" as *;
+
+.pagination .page-numbers {
+  color: $black;
+  font-size: 0.875rem;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  margin: 0 0.3125rem;
+  font-family: $eng-fonts;
+}
+.pagination a {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.45rem 1rem;
+  // padding: 0.5625rem 1rem;
+}
+.page-numbers {
+  background-color: $page;
+  color: $border;
+}
+.pagination .current {
+  color: $white;
+  background-color: $font;
+  display: block;
+  padding: 0.45rem 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.page-numbers.prev,
+.page-numbers.next {
+  background-color: transparent;
+  position: relative;
+  display: inline-block;
+  width: 0.5625rem;
+  height: 1rem;
+  padding: 0;
+}
+.pagination .prev::before,
+.pagination .prev::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 0.5625rem;
+  height: 0.1875rem;
+  background-color: $black;
+  transform-origin: calc(0% - 2.5px) 50%;
+}
+
+// 上側
+.pagination .prev::before {
+  top: calc(50% - 1.5px);
+  transform: rotate(45deg);
+}
+
+// 下側
+.pagination .prev::after {
+  top: calc(50% + 3px);
+  transform: rotate(-45deg);
+}
+
+.pagination .next::before,
+.pagination .next::after {
+  content: "";
+  position: absolute;
+
+  width: 0.5625rem;
+  height: 0.1875rem;
+  background-color: $black;
+  transform-origin: calc(50% - 1.5px) 0%;
+}
+
+// 上側
+.pagination .next::before {
+  transform: rotate(45deg);
+  top: calc(50% - 2px);
+  left: calc(50% - 1px);
+}
+
+// 下側
+.pagination .next::after {
+  transform: rotate(-45deg);
+  top: calc(100% - 2.5px);
+  left: calc(50% - 3px);
+}
+.pagination a:hover {
+  color: $page;
+  background-color: $main-blue;
+  transition: 0.3s;
+}
+
+.pagination .prev:hover,
+.pagination .next:hover {
+  color: $main-blue;
+  background-color: transparent;
+  transition: 0.3s;
+}

@@ -4,3 +4,5 @@
 @use "./global/" as *;
 
 @use "./module/news/news__all";
+@use "./module/news/news__detail";
+@use "./module/news/sidebar";

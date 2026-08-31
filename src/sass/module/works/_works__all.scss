@@ -1,16 +1,42 @@
 @use "../../global/" as *;
 
-.main-fv.news__fv {
+.detail-header__btn .hamberger .menu__button {
+  position: absolute;
+  left: 0;
+  display: block;
+  z-index: 1001;
+  height: 1px;
+  width: 25px;
+  background-color: #242424;
+  border-radius: 999px;
+  transform-origin: left center;
+  transition: ease-in-out 0.5s;
+}
+.menu__button:first-child {
+  top: 0rem;
+}
+.hamberger .menu__button:nth-child(2) {
+  top: 0.75rem;
+  width: 20px;
+}
+.hamberger .menu__button:nth-child(3) {
+  top: 1.5rem;
+  width: 15px;
+}
+.main-fv.works__fv {
   height: 100%;
   position: relative;
   z-index: 1;
   padding-top: 0rem;
   @include mq("md") {
     padding-top: 5rem;
+    min-height: 100%;
   }
 }
-
-.main-fv__container.news__fv__container {
+.works__fv--inner {
+  height: inherit;
+}
+.main-fv__container.works__fv__container {
   width: 100%;
   height: inherit;
   margin-top: 5rem;
@@ -20,13 +46,13 @@
     margin: 0 0 0 auto;
   }
 }
-.news__all {
+.works__all {
   margin-top: 1.875rem;
   @include mq("md") {
     margin-top: 7rem;
   }
 }
-.news__all--inner {
+.works__all--inner {
   max-width: 600px;
   padding: 1.875rem 1.25rem 0;
   display: flex;
@@ -40,13 +66,13 @@
     margin-right: auto;
   }
 }
-.news__fv__container picture {
+.works__fv__container picture {
   aspect-ratio: 365 /280;
   @include mq("md") {
     aspect-ratio: 1270 /514;
   }
 }
-.news__all--wrapper {
+.works__all--wrapper {
   display: flex;
   padding: 0 1.25rem;
   max-width: 600px;
@@ -60,9 +86,10 @@
     top: 6rem;
     align-self: flex-start;
     height: fit-content;
+    padding: 0 0.5rem;
   }
 }
-.news__all--informaition {
+.works__all--informaition {
   display: grid;
   grid-template-columns: repeat(2, 1fr); // 横並び
   justify-content: space-between;
@@ -80,7 +107,7 @@
     border-bottom: none;
   }
 }
-.news__all--informaition h2 {
+.works__all--informaition h2 {
   font-family: $base-font-family;
   font-size: 0.75rem;
   line-height: 1.4166666667;
@@ -91,7 +118,7 @@
     font-size: 0.875rem;
   }
 }
-.news__all--informaition p {
+.works__all--informaition p {
   font-family: $base-font-family;
   font-size: 0.75rem;
   line-height: 1.4166666667;
@@ -103,7 +130,7 @@
     margin-top: 1.25rem;
   }
 }
-.news__all--informaition h2::before {
+.works__all--informaition h2::before {
   position: absolute;
   top: 0.375em;
   content: "";
@@ -113,21 +140,58 @@
   background-color: $font;
   display: block;
 }
-.news__contents {
+.works__contents {
   margin-top: 1.25rem;
   width: 100%;
+  padding: 0 1.25rem;
   @include mq("md") {
     margin-top: 0;
     height: 100%;
     width: 69.666%;
-    padding-left: 3.75rem;
+    padding: 0 3.75rem;
     border-left: 1px solid $border-card;
   }
 }
-
-.nav__card--heading {
+.works__contents > .works__contents--nav:first-child {
+  margin-top: 0;
+}
+.works-contents__wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-card;
+  @include mq("md") {
+    padding: 0 0 3.125rem 0;
+  }
+}
+.works-contents__wrapper img {
+  display: block;
+  width: 44.06%;
+  aspect-ratio: 130 / 100;
+  object-fit: cover;
+  @include mq("md") {
+    flex: 0 0 29%;
+    max-width: 290px;
+    width: 20.61%;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+}
+.works__card--heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 50%;
+  margin-left: 2.0625rem;
+  @include mq("md") {
+    margin-left: 1.875rem;
+  }
+}
+.works-nav__active {
+  padding-bottom: 1.875rem;
+  @include mq("md") {
+    padding: 0;
+  }
 }
 .nav__card--title {
   font-family: $base-font-family;
@@ -145,26 +209,12 @@
     margin-top: 1.875rem;
     padding-bottom: 0;
   }
-  /* 下線 */
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 1px;
-    background-color: $black;
-    padding-right: 0.5rem;
-    transform: scaleX(0);
-    transform-origin: left;
-    /* ホバーを外したときは速く消える */
-    transition: transform 0.2s ease;
-  }
 }
+/* 下線 */
+
 /* works__cardをホバーしたら下線を伸ばす */
 .nav__card:hover .nav__card-title::after {
   transform: scaleX(1);
-
   /* ホバーしたときはゆっくり伸びる */
   transition: transform 0.6s ease;
 }
@@ -181,8 +231,8 @@
     line-height: 2.375;
   }
 }
-.news-nav__active span {
-  display: block;
+.works-nav__active span {
+  display: inline-block;
   color: $tag;
   font-weight: $medium;
   padding: 0.3125rem 0.9375rem;
@@ -197,70 +247,59 @@
     font-size: 0.6875rem;
     padding: 0.25rem 1.125rem;
     text-align: center;
-    min-width: 7.25rem;
+    min-width: 5.6875rem;
   }
 }
-.news-nav__active span:first-child {
-  margin-left: 1.25rem;
-  @include mq("md") {
-    margin-left: 1.8125rem;
-  }
-}
-.news-nav__active span:not(:first-child) {
-  margin-left: 0.375rem;
-  @include mq("md") {
-    margin-left: 1.25rem;
-  }
-}
-.news__contents--nav a {
-  display: inline-block;
+
+.works__contents--nav a {
+  display: block;
   font-family: $base-font-family;
+  line-height: 2;
   color: $black;
   font-size: 0.875rem;
   font-weight: $medium;
-  line-height: 2;
   margin-top: 1.25rem;
+  position: relative;
   @include mq("md") {
     margin-top: 1.625rem;
     font-size: 1rem;
     line-height: 1.4375;
   }
 }
-
-.news-nav__datetime {
+.works-nav__datetime {
+  display: block;
   color: $time;
   font-family: $base-font-family;
   font-size: 0.625rem;
   font-weight: $bold;
   @include mq("md") {
-    display: inline-block;
     font-size: 0.75rem;
   }
 }
-.news__contents .news__contents--nav {
+.works__contents .works__contents--nav {
   position: relative;
   display: block;
   margin-left: 1.125rem;
-  border-bottom: 1px solid $border-card;
   padding-bottom: 1.25rem;
   @include mq("md") {
     padding-bottom: 1.875rem;
     margin-left: 0;
   }
 }
-.news__contents .news__contents--nav:not(:first-child) {
+.works__contents .works__contents--nav:not(:first-child) {
   padding-top: 1.25rem;
   @include mq("md") {
     padding-top: 1.875rem;
   }
 }
+
 /* 下線 */
-.news__contents--nav a::after {
-  display: block;
+.works-nav__active a::after {
+  display: inline-block;
   content: "";
   position: absolute;
-  left: 0.05rem;
-  bottom: 1.5rem;
+  right: 0.05rem;
+  bottom: -4px;
   width: 100%;
   height: 1px;
   background-color: $black;
@@ -269,16 +308,19 @@
   transform-origin: left;
   /* ホバーを外したときは速く消える */
   transition: transform 0.5s ease-in;
+  @include mq("md") {
+    transform: scaleX(0);
+  }
 }
-.news__contents--nav a:hover::after {
+.works-nav__active a:hover::after {
   transform: scaleX(1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
 }
-.news__contents--jump {
+.works__contents--jump {
   width: 81.8%;
   margin: 2.5rem auto 0;
   display: flex;
   align-items: center;
   @include mq("md") {
-    margin: 3.5rem auto 0 0;
+    margin: 1.875rem auto 0 0;
   }
 }

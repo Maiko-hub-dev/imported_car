@@ -1,232 +1,235 @@
 @use "../global/" as *;
 
 .works {
-    width: 100%;
-    margin-top: 1.875rem;
-    background-color: $gray;
-    padding: 3.75rem 0 6.6875rem 0;
-    @include mq("md") {
-        margin-top: 3.75rem;
-    }
+  width: 100%;
+  margin-top: 1.875rem;
+  background-color: $gray;
+  padding: 3.75rem 0 6.6875rem 0;
+  @include mq("md") {
+    margin-top: 3.75rem;
+  }
 }
 .works__container {
+  background-color: $white;
+  position: relative;
+  z-index: 0;
+  padding: 0 0 5rem 0;
+  @include mq("md") {
+    background-color: transparent;
+    padding: 0 1rem;
+  }
+}
+.works__wrapper {
+  @include mq("md") {
     background-color: $white;
-    position: relative;
-    z-index: 0;
-    padding: 0 0 5rem 0;
-    @include mq("md") {
-        background-color: transparent;
-        padding: 0 1rem;
-    }
+    padding-bottom: 3.125rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 }
-.works__wrapper{
-    @include mq("md") {
-        background-color: $white;
-        padding-bottom: 3.125rem;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
+.works__titles {
+  position: relative;
+  width: 53.22%;
+  @include mq("md") {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1100px;
+  }
 }
-.works__titles{
-    position: relative;
-    width: 53.22%;
-    @include mq("md") {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 1100px;
-    }
-}
-.works__title{
-    font-family: $eng-fonts;
-    font-size: 2rem;
-    line-height: 1.25;
+.works__title {
+  font-family: $eng-fonts;
+  font-size: 2rem;
+  line-height: 1.25;
+  color: $black;
+  text-transform: capitalize;
+  position: relative;
+  padding-bottom: 1.25rem;
+  padding-left: 1.25rem;
+  // 左から
+  &.js-title {
+    transform: translateX(-150px);
+  }
+  @include mq("md") {
+    font-size: 4.375rem;
     color: $black;
-    text-transform: capitalize;
-    position: relative;
-    padding-bottom: 1.25rem;
-    padding-left: 1.25rem;
-       // 左から
-    &.js-title {
-        transform: translateX(-150px);
-    }
-    @include mq("md") {
-        font-size: 4.375rem;
-        color: $black;
-        padding-left: 0;
-        padding-right: 0.5rem;
-    }
+    padding-left: 0;
+    padding-right: 0.5rem;
+  }
 }
 .works__title.js-title {
   transform: translateX(-50%);
   opacity: 0;
-  transition: transform 1s ease-out ,opacity 1s ease-out;
+  transition:
+    transform 1s ease-out,
+    opacity 1s ease-out;
+}
+.works__title.is-active {
+  opacity: 1;
+  transform: translateX(0%);
+}
 
-  &.is-active {
-    opacity: 1;
-    transform: translateX(0%);
+.works__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include mq("md") {
+    background-color: $white;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3.125rem 0;
   }
 }
-.works__cards {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    @include mq("md") {
-        background-color: $white;
-        justify-content: center;
-        margin: 0 auto;
-        padding: 3.125rem 0;
-    }
+.works__card {
+  display: block;
+  padding: 1.875rem 1.25rem;
+  background-color: $white;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: $border-card;
+  @include mq("md") {
+    margin: 0;
+    max-width: 100%;
+    padding: 0 2.5rem 3.125rem;
+    overflow: visible;
+  }
 }
-.works__card{
-    display: block;
-    padding: 1.875rem 1.25rem;
-    background-color: $white;
+.works__card--container {
+  padding: 0 1.25rem;
+}
+.works__card--contents {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-bottom: 1px solid $border-card;
+  @include mq("md") {
+    padding: 0 0 3.125rem 0;
+  }
+}
+.works__card--contents picture {
+  @include mq("md") {
+    flex: 0 0 29%;
+    max-width: 290px;
+    aspect-ratio: 290 / 229;
+    overflow: hidden;
+  }
+}
+.works__card--contents img {
+  display: block;
+  min-width: 120px;
+  aspect-ratio: 120 / 90;
+  object-fit: cover;
+  @include mq("md") {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    border-bottom: $border-card;
-    @include mq("md") {
-        margin: 0;
-        max-width: 100%;
-        padding: 0 2.5rem 3.125rem;
-        overflow: visible;
-    }
-}
-.works__card--container{
-    padding: 0 1.25rem;
-}
-.works__card--contents{
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    border-bottom: 1px solid $border-card;
-    @include mq("md") {
-        padding: 0 0 3.125rem 0;
-    }
-}
-.works__card--contents picture{
-    @include mq("md") {
-        flex: 0 0 29%;
-        max-width: 290px;
-        aspect-ratio:  290 / 229;
-        overflow: hidden;
-    }
-}
-.works__card--contents img{
-    display: block;
-    min-width: 120px;
-    aspect-ratio:  120 / 90;
+    height: 100%;
     object-fit: cover;
-    @include mq("md") {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        // aspect-ratio:  290 / 229;
-    }
+    // aspect-ratio:  290 / 229;
+  }
 }
 
-.works__card-date{
-    color: $black;
-    font-family: $eng-fonts;
-    font-size: 0.75rem;
-    line-height: 1.5;
+.works__card-date {
+  color: $black;
+  font-family: $eng-fonts;
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
-.works__card--titles{
-    margin-left: 1.125rem;
-    padding-bottom: 1.875rem;
-    @include mq("md") {
-        margin-left: 3.125rem;
-        padding: 0;
-    }
+.works__card--titles {
+  margin-left: 1.125rem;
+  padding-bottom: 1.875rem;
+  @include mq("md") {
+    margin-left: 3.125rem;
+    padding: 0;
+  }
 }
-.works__card-heading{
-    display: flex;
+.works__card-heading {
+  display: flex;
 }
-.works__card-title{
-    font-family: $base-font-family;
-    font-weight: $medium;
-    line-height: 2;
-    padding-bottom: 1.25rem;
-    margin-top: 1.25rem;
-    font-size: 0.875rem;
-    position: relative;
-    @include mq("md") {
-    font-size:  1.5rem;
+.works__card--title {
+  font-family: $base-font-family;
+  font-weight: $medium;
+  line-height: 2;
+  padding-bottom: 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  position: relative;
+  @include mq("md") {
+    font-size: 1.5rem;
     letter-spacing: normal;
     padding-right: 0.25rem;
     line-height: 1.458;
     margin-top: 1.875rem;
     padding-bottom: 0;
-    }
-        /* 下線 */
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-        width: 100%;
-        height: 1px;
-        background-color: $black;
-        padding-right: 0.5rem;
-        transform: scaleX(0);
-        transform-origin: left;
-        /* ホバーを外したときは速く消える */
-        transition: transform 0.2s ease;
-    }
+  }
 }
-/* works__cardをホバーしたら下線を伸ばす */
-.works__card:hover .works__card-title::after {
-    transform: scaleX(1);
+/* 下線 */
+.works__card--title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background-color: $black;
+  padding-right: 0.5rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  /* ホバーを外したときは速く消える */
+  transition: transform 0.2s ease;
+}
 
-    /* ホバーしたときはゆっくり伸びる */
-    transition: transform 0.6s ease;
+/* works__cardをホバーしたら下線を伸ばす */
+.works__card:hover .works__card--title::after {
+  transform: scaleX(1);
+
+  /* ホバーしたときはゆっくり伸びる */
+  transition: transform 0.6s ease;
 }
-.works__card--txt{
-    color: $black;
-    line-height: 1.5;
-    padding: 1rem 0 0 0;
-    font-family: $base-font-family;
-    font-weight: $normal;
-    @include mq("md") {
+.works__card--txt {
+  color: $black;
+  line-height: 1.5;
+  padding: 1rem 0 0 0;
+  font-family: $base-font-family;
+  font-weight: $normal;
+  @include mq("md") {
     font-size: 1rem;
     padding: 1.875rem 0 0;
     letter-spacing: normal;
     line-height: 2.375;
-    }
+  }
 }
-.works__active-content{
-    display: block;
-    color: $tag;
-    font-weight: $medium;
-    padding: 0.3125rem 0.9375rem;
-    line-height: 1.4;
-    background-color: $label;
-    font-size: 0.625rem;
+.works__active-content {
+  display: block;
+  color: $tag;
+  font-weight: $medium;
+  padding: 0.3125rem 0.9375rem;
+  line-height: 1.4;
+  background-color: $label;
+  font-size: 0.625rem;
+  text-align: center;
+  font-family: $base-font-family;
+  width: 5rem;
+  white-space: nowrap;
+  @include mq("md") {
+    font-size: 0.6875rem;
+    padding: 0.25rem 1.125rem;
     text-align: center;
-    font-family: $base-font-family;
-    width: 5rem;
-    white-space: nowrap;
-    @include mq("md") {
-        font-size: 0.6875rem;
-        padding: 0.25rem 1.125rem;
-        text-align: center;
-        min-width: 7.25rem;
-        margin: 0;
-    }
+    min-width: 7.25rem;
+    margin: 0;
+  }
 }
-.works__datetime{
-    color: $time;
-    font-family: $base-font-family;
-    font-size: 0.625rem;
-    font-weight: $bold;
-    @include mq("md") {
-        display: inline-block;
-        font-size: 0.75rem;
-        margin-top: 1.0625rem;
-    }
+.works__datetime {
+  color: $time;
+  font-family: $base-font-family;
+  font-size: 0.625rem;
+  font-weight: $bold;
+  @include mq("md") {
+    display: inline-block;
+    font-size: 0.75rem;
+    margin-top: 1.0625rem;
+  }
 }
-.works__readmore.common-link-btn{
+.works__readmore.common-link-btn {
   display: flex;
   align-items: center;
   width: 5.8125rem;
@@ -240,12 +243,12 @@
     content: "";
   }
 }
-.works__readmore .read-more--arrow{
-    @include mq("md") {
-        margin-top: 0.25em;
-    }
+.works__readmore .read-more--arrow {
+  @include mq("md") {
+    margin-top: 0.25em;
+  }
 }
 
-.works__card--titles:hover .works__card-title{
-    transform: scale(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
+.works__card--titles:hover .works__card--title {
+  transform: scale(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
 }
